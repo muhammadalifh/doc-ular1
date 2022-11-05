@@ -1,0 +1,38 @@
+Diskusi Pertemuan Kedua
+
+Idenya: Sistem Rekomendasi Buku berbasis Website
+Terget:
+- Rumusan Masalah dan Hipotesis
+- Pengambilan dan Pengolahan Data
+- Penulisan draft naskah laporan akhir
+
+Rumusan Masalah:
+Literasi baca di Indonesia yang rendah.
+
+1. Datanya
+- Website Bukunya (yang legal)
+- Mood = Senang, Sedih, Malas, Bosan, Marah, Tersipu
+- Jumlah data = 
+- Tabel Data
+a. Judul
+b. Penulis
+c. Publisher
+d. Tahun 
+e. Bahasa
+f. Link
+g. Free/Berbayar
+h. Id Buku (Ini ga dicari, ntar dibuat unik sendiri)
+
+2. Pembagian Nyari Data:
+List:
+Senang, Sedih, Malas, Bosan, Marah, Tersipu, Latar Belakang, Latar Belakang
+
+1. Alif : Marah, Tersipu
+2. Rifki: malas, bosan
+3. Nadea: Sedih, Latar Belakang (minimal 5 jurnal)
+4. Naovi: Senang,latar belakang (minimal 5 jurnal)
+Link SpreadSheet: https://docs.google.com/spreadsheets/d/1WQbSqod1bIvuUfbUj0Mi7CwrDSBjCxBGUXzFk0j6-_g/edit?usp=sharing
+
+Deadline Rabu 23.59
+
+Meet ketiga: Kamis, 10 November 2022
