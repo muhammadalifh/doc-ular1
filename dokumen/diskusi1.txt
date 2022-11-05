@@ -1,0 +1,31 @@
+Diskusi 1 (02 November 2022)
+
+Ide:
+1. Klasifikasi Daun (CV) 1111 | 11 -Tereliminasi
+
+2. Sistem Rekomendasi Buku (DS) 1111 | 1111
+Referensi: 
+https://culinar.vercel.app/
+https://apify.com/perci/z-library-book-scraper#why-scrape-z-library
+
+3. Chatbot Kesehatan (DS) 1111 | 11 -Tereliminasi
+
+4. Chatbot Asisten Virtual Penyakit (DS) -Terleminasi
+
+Referensi:
+https://www.aperisolve.com/
+https://pypi.org/project/zlibrary/#description
+
+---PATOKAN---
+Sistem Rekomendasi Buku (DS)
+Referensi ide: Terakhir jum'at (<12.00 WIB) -kirim ke grup whatsapp
+
+Luaran: Application Based Website using Flask
+Kolaborasi: Github
+Nama github:
+1. Alif = muhammadalifh
+2. Nadea = nadeap
+3. Naovi = NaoviMagfiroh
+4. Rifki = rifkibudiarto3
+
+Pembagian Tugas: dibagi hari Jum'at (04 November 2022)
