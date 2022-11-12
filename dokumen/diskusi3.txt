@@ -1,0 +1,14 @@
+diskusi3 (Selasa, 08 November 2022)
+
+- Rekomendasi buku berdasarkan mood berarti judul2nya masih sama seperti mood yang diinputkan user.
+- Yang dibingungkan antara 2 hal:
+a. Kalau rekomendasinya sudah ada seperti culinar, maka bukunya dicampur dulu,
+	Lalu diklasifikasi pake model ML/DL
+b. Kalau bukunya ga dicampur (sesuai mood) maka rekomendasi verdasarkan mood itu pake CV.
+	pake face emotion detection OpenCV.
+- Latar belakang kurangnya jurnal tentang korelasi mood dengan jenis buku bacaan seseorang.
+- Dicoba bukunya digabungin terus pake klasifikasi ML.
+- Dicoba OpenCV buat emotion detection.
+
+Link Referensi CV:
+https://www.kaggle.com/datasets/ananthu017/emotion-detection-fer

@@ -1,0 +1,24 @@
+diskusi 4
+PR Minggu ini
+
+Data kita: sedih, senang, marah, bosan, terkejut, malas
+Data kaggle: sedih, senang, marah, netral, terkejut, takut
+
+- Latar Belakang 50%
+- Dataset 100%
+a. dataset buku AMAN (https://www.kaggle.com/datasets/ananthu017/emotion-detection)
+NYARI COVER BUKU (cover depan) GAMBAR
+b. dataset emotion detection AMAN
+- Object Detection, model dan sample detection (CNN) 60%
+- Desain Sistem (Flowchart) -> 
+
+Pembagian Tugas:
+Dataset: Rifki (300 Cover Buku)
+Terkejut: Rifki, Alif, Nadea & Naovi (50 Dataset)
+Model CV: Nadea & Naovi
+Alur Sistem (Flowchart): Naovi
+ID Buku: Nadea DONE
+Tampilan Web & deploy: Alif
+
+
+
