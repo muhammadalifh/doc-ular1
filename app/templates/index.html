@@ -40,6 +40,8 @@
 	<link rel="stylesheet"
 		href={{ url_for('static', filename='/css/style.css') }}
 		type="text/css" media="all">
+
+	<script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
 	<!--<link rel="stylesheet" href={{ url_for('static', filename='/css/client_side.css') }}  type="text/css"> -->
 
 	<!-- JavaScript -->
@@ -121,6 +123,36 @@
 				</div>
 			</div>
 
+
+
+
+			<!-- <div class="features">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="features-text wow fadeInDown">
+								<h2>Real time traffic and activity demographics</h2>
+								<p>I don't know what to type here so let me fill some random text. Lorem ipsum is hard
+									to
+									consume and I use it as a last resort. So, I'll fill random text please and you
+									don't even
+									have to read it.</p>
+								<button class="btn btn-primary btn-action" type="button"><span>Buy Now</span></button>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<form action="{{ url_for('after') }}" method="POST" enctype="multipart/form-data">
+								<input type="file" name="file1">
+								<input type="submit" name="btn">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>  -->
+
+
+
+
 			<div class="features">
 				<div class="container">
 					<div class="row">
@@ -139,6 +171,57 @@
 							<div class="features-image wow fadeInRight">
 								<img class="img-responsive" alt="Image"
 									src="{{ url_for('static',filename = 'images/oculus.png') }}"></img>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="features">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="features-text wow fadeInDown">
+								<h2>Real time traffic and activity demographics</h2>
+								<p>I don't know what to type here so let me fill some random text. Lorem ipsum is hard
+									to
+									consume and I use it as a last resort. So, I'll fill random text please and you
+									don't even
+									have to read it.</p>
+								<button class="btn btn-primary btn-action" type="button"><span>Buy Now</span></button>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="features-image wow fadeInRight">
+								<video id="webcam" autoplay playsinlne width="800" height="600"></video>
+								<canvas id="canvas"></canvas>
+								<style>
+									#snap { 
+										padding: 10px;
+										background-color: aqua;
+										color: white;
+										text-decoration: none;
+									}
+								</style>
+								<a download id="snap" onclick="takePicture()">Snap</a>
+								<script>
+										const webCamElement = document.getElementById('webcam');
+										const canvasElement = document.getElementById('canvas');
+
+										const webcam = new Webcam(webCamElement, 'user', canvasElement);
+										webcam.start()
+											.then(result =>{
+												console.log("webcam started");
+											})
+											.catch(err => {
+												console.log(err);
+											});
+
+											function takePicture(){
+											let picture = webcam.snap();
+												document.querySelector('a').href = picture;
+											}
+								</script>
 							</div>
 						</div>
 					</div>
