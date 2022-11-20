@@ -367,10 +367,10 @@ def index():
 def after():
     img = request.files['file1']
 
-    img.save('static/file.jpg')
+    img.save('static/hasil/file.jpg')
 
     ####################################
-    img1 = cv2.imread('static/file.jpg')
+    img1 = cv2.imread('static/hasil/file.jpg')
     gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
     faces = cascade.detectMultiScale(gray, 1.1, 3)
@@ -380,10 +380,10 @@ def after():
 
         cropped = img1[y:y+h, x:x+w]
 
-    cv2.imwrite('static/after.jpg', img1)
+    cv2.imwrite('static/hasil/after.jpg', img1)
 
     try:
-        cv2.imwrite('static/cropped.jpg', cropped)
+        cv2.imwrite('static/hasil/cropped.jpg', cropped)
 
     except:
         pass
@@ -391,9 +391,9 @@ def after():
     #####################################
 
     try:
-        image = cv2.imread('static/cropped.jpg', 0)
+        image = cv2.imread('static/hasil/cropped.jpg', 0)
     except:
-        image = cv2.imread('static/file.jpg', 0)
+        image = cv2.imread('static/hasil/file.jpg', 0)
 
     image = cv2.resize(image, (48,48))
 
