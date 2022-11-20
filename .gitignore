@@ -1,4 +1,5 @@
-	# JPEG
+app/static/
+# JPEG
 *.jpg
 *.jpeg
 *.jpe
