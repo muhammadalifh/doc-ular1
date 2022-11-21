@@ -363,6 +363,14 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 def index():
     return render_template('index.html')
 
+@app.route('/index1')
+def index1():
+    return render_template('index1.html')
+
+@app.route('/marah')
+def marah():
+    return render_template('marah.html')
+
 @app.route('/after', methods=['GET', 'POST'])
 def after():
     img = request.files['file1']
@@ -401,11 +409,13 @@ def after():
 
     image = np.reshape(image, (1,48,48,1))
 
-    model = load_model('model.h5')
+    model = load_model('model-acc-60.h5')
 
     prediction = model.predict(image)
 
-    label_map =   ['Anger','Neutral' , 'Fear', 'Happy', 'Sad', 'Surprise']
+    # label_map =   ['Anger','Neutral' , 'Fear', 'Happy', 'Sad', 'Surprise']
+
+    label_map =   ['Marah', 'Bosan', 'Malas', 'Senang', 'Sedih', 'Terkejut']
 
     prediction = np.argmax(prediction)
 
