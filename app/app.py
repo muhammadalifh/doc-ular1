@@ -371,6 +371,10 @@ def index1():
 def marah():
     return render_template('marah.html')
 
+@app.route('/senang')
+def senang():
+    return render_template('senang.html')
+
 @app.route('/after', methods=['GET', 'POST'])
 def after():
     img = request.files['file1']
