@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Terkejut</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Icon -->
+	<link rel="shortcut icon"
+    href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700%7CRoboto:300,400,500%7CMuli:300,400"
+    rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/bootstrap.min.css') }}
+        type="text/css" media="all">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/animate.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/owl.carousel.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/owl.theme.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/magnific-popup.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/ionicons.min.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/style.css') }}
+        type="text/css" media="all">
+
+</head>
+<body>
+
+<div class="wrapper">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bukuku </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a class="page-scroll" href="#main">Home</a></li>
+                    <li><a class="page-scroll" href="#features">Features</a></li>
+                    <li><a class="page-scroll" href="#reviews">Reviews</a></li>
+                    <li><a class="page-scroll" href="#buy">Pricing</a></li>
+                    <li><a class="page-scroll" href="#kelompok">Kelompok</a></li>
+                    <li><a href="#buy" class="btn btn-nav page-scroll wow fadeInDown"
+                            data-wow-delay="0.3s"><span>Buy Now</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><!-- /.navbar-collapse -->
+</div>
+
+
+    <style>
+        :root {
+            --columns: 3;
+            --yellow: rgba(238, 188, 31, 1);
+            --pink: rgba(255, 82, 145, 1);
+            --blue: rgba(64, 98, 187, 1);
+            --green: rgba(6, 141, 126, 1);
+            --white: rgba(248, 255, 229, 1);
+          }
+          
+
+          
+          .unordered{
+            display:grid;
+            grid-template-columns: repeat(var(--columns),1fr);
+            margin: 200px -40px;
+          }
+          
+          .list{
+            grid-column-end: span 2;
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            margin-top: -50%;
+          }
+          
+          .list:nth-child(2n){
+            grid-column-start:2;
+          }
+          
+          .list::before, .list::after {
+            content:'';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: 50% 100%,50% 100%;
+            background-position: left, right;
+          }
+          
+          .list::before{
+            z-index: -10;
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            background-repeat: no-repeat;
+            background-image: linear-gradient(-45deg,var(--yellow) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--yellow) 60%), linear-gradient(45deg,var(--yellow) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--yellow) 60%);
+          }
+          
+          .list::after{
+            clip-path: polygon(100% 50%, 50% 100%, 0 50%, 20% 50%, 50% 80%,80% 50%);
+            -webkit-clip-path: polygon(100% 50%, 50% 100%, 0 50%, 20% 50%, 50% 80%,80% 50%);
+            background-repeat: no-repeat;
+            background-image: linear-gradient(45deg,var(--yellow) 40%,var(--green) 40%), linear-gradient(-45deg,var(--yellow) 40%,var(--green) 40%);
+          }
+          
+          .list:nth-child(2n)::before{
+            background-image: linear-gradient(-45deg,var(--pink) 53.5%,var(--blue) 53.5%,var(--blue) 60%,var(--pink) 60%), linear-gradient(45deg,var(--pink) 53.5%,var(--blue) 53.5%,var(--blue) 60%,var(--pink) 60%);
+          }
+          
+          .list:nth-child(2n)::after{
+            background-image: linear-gradient(45deg,var(--pink) 40%,var(--blue) 40%), linear-gradient(-45deg,var(--pink) 40%,var(--blue) 40%);
+          }
+          
+          .list:nth-child(5n)::before{
+            background-image: linear-gradient(-45deg,var(--green) 53.5%,var(--pink) 53.5%,var(--pink) 60%,var(--green) 60%), linear-gradient(45deg,var(--green) 53.5%,var(--pink) 53.5%,var(--pink) 60%,var(--green) 60%);
+          }
+          
+          .list:nth-child(5n)::after{
+            background-image: linear-gradient(45deg,var(--green) 40%,var(--pink) 40%), linear-gradient(-45deg,var(--green) 40%,var(--pink) 40%);
+          }
+          
+          .list:nth-child(7n)::before,.list:nth-child(7n-4)::before{
+            background-image: linear-gradient(-45deg,var(--blue) 53.5%,var(--white) 53.5%,var(--white) 60%,var(--blue) 60%), linear-gradient(45deg,var(--blue) 53.5%,var(--white) 53.5%,var(--white) 60%,var(--blue) 60%);
+          }
+          
+          .list:nth-child(7n)::after,.list:nth-child(7n-4)::after{
+            background-image: linear-gradient(45deg,var(--blue) 40%,var(--white) 40%), linear-gradient(-45deg,var(--blue) 40%,var(--white) 40%);
+          }
+          
+          .list:nth-child(9n)::before,.list:nth-child(9n-5)::before{
+            background-image: linear-gradient(-45deg,var(--white) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--white) 60%), linear-gradient(45deg,var(--white) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--white) 60%);
+          }
+          
+          .list:nth-child(9n)::after,.list:nth-child(9n-5)::after{
+            background-image: linear-gradient(45deg,var(--white) 40%,var(--green) 40%), linear-gradient(-45deg,var(--white) 40%,var(--green) 40%);
+          }
+          
+          .image{
+            position: absolute;
+            width: 43%;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-60%);
+            box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
+            transition-property: transform;
+            transition-duration: .3s;
+          }
+          
+          .image:hover{
+            transform: translateX(-40%) translateY(-70%) rotatez(25deg);
+          }
+          @media (min-width:450px){
+            .unordered{
+              margin: 190px 40px;
+            }
+          }
+          @media (min-width:600px){
+            :root {
+              --columns: 5;
+            }
+            .list:nth-child(2n){
+              grid-column-start:auto;
+            }
+            .list:nth-child(4n-1){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:900px){
+            :root {
+              --columns: 7;
+            }
+            .list:nth-child(4n-1){
+              grid-column-start:auto;
+            }
+            .list:nth-child(6n-2){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:1200px){
+            :root {
+              --columns: 9;
+            }
+            .list:nth-child(6n-2){
+              grid-column-start:auto;
+            }
+            .list:nth-child(8n-3){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:1500px){
+            :root {
+              --columns: 11;
+            }
+            .list:nth-child(8n-3){
+              grid-column-start:auto;
+            }
+            .list:nth-child(10n-4){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:1800px){
+            :root {
+              --columns: 13;
+            }
+            .list:nth-child(10n-4){
+              grid-column-start:auto;
+            }
+            .list:nth-child(12n-5){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:2100px){
+            :root {
+              --columns: 15;
+            }
+            .list:nth-child(12n-5){
+              grid-column-start:auto;
+            }
+            .list:nth-child(14n-6){
+              grid-column-start:2;
+            }
+          }
+          
+          
+          
+    </style>
+
+    <br><br><br><br>
+
+    <center>
+        <h1>Buku Dengan Prediksi Terkejut 😲</h1>
+    </center>
+
+    <ul class="unordered">
+        <li class="list" id="list1"> 
+            <a target="_blank" href="https://www.gramedia.com/products/komik-fantasteen-51-buku-harian-terkutuk?queryID=da37e936fd30f20597655f70881d0380">
+                <img class="image" src="{{ url_for('static', filename='/terkejut/TK-001.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list2"> 
+            <a target="_blank" href="https://www.gramedia.com/products/terkutuk-dan-kisah-kisah-mengerikan-lainnya?queryID=da37e936fd30f20597655f70881d0380">
+                <img class="image" src="{{ url_for('static', filename='/terkejut/TK-002.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list3"> 
+            <a target="_blank" href="https://www.google.co.id/books/edition/Days_of_Terror/dsvvCAAAQBAJ?hl=id&gbpv=0">
+                <img class="image" src="{{ url_for('static', filename='/terkejut/TK-003.jpeg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list4"> 
+            <a target="_blank" href="https://www.google.co.id/books/edition/Teenlit_Teror_Diari_Tua/ieA8DwAAQBAJ?hl=id&gbpv=0">
+                <img class="image" src="{{ url_for('static', filename='/terkejut/TK-004.jpeg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list5"> 
+            <a target="_blank" href="https://www.gramedia.com/products/jurnal-risa-teror-liburan-sekolah?queryID=be68905f4a62e116a30d1fc49c80a8c6">
+                <img class="image" src="{{ url_for('static', filename='/terkejut/TK-005.jpeg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list6"> 
+          <a target="_blank" href="https://www.gramedia.com/products/dalam-teror-arwah?queryID=be68905f4a62e116a30d1fc49c80a8c6">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-006.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list7"> 
+          <a target="_blank" href="https://www.gramedia.com/products/13-kisah-horor-kkn?queryID=2dfaf8063bab88c02cb7538c454a5d90">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-007.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list8"> 
+          <a target="_blank" href="https://www.gramedia.com/products/conf-penghuni-kamar-mayat?queryID=2dfaf8063bab88c02cb7538c454a5d90">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-008.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list9"> 
+          <a target="_blank" href="https://www.gramedia.com/products/conf-memanggil-hantu?queryID=2dfaf8063bab88c02cb7538c454a5d90">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-009.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list10"> 
+          <a target="_blank" href="https://www.gramedia.com/products/13-kisah-horor-kuntilanak?queryID=2dfaf8063bab88c02cb7538c454a5d90">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-010.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list11"> 
+          <a target="_blank" href="https://www.gramedia.com/products/jembatan-horor?queryID=884dcf728441656eebffca8d25e82ea6">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-011.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list12"> 
+          <a target="_blank" href="https://www.gramedia.com/products/dari-jendela-lantai-tiga?queryID=f10d6d8f9c54713b7e40408b4e67f303">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-012.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list13"> 
+          <a target="_blank" href="https://www.gramedia.com/products/tumbal?queryID=f10d6d8f9c54713b7e40408b4e67f303">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-013.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list14"> 
+          <a target="_blank" href="https://www.gramedia.com/products/arwah?queryID=f10d6d8f9c54713b7e40408b4e67f303">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-014.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list15"> 
+          <a target="_blank" href="https://www.gramedia.com/products/merinding?queryID=2572c21963c403ba122b5d2970b89079">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-015.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list16"> 
+          <a target="_blank" href="https://www.gramedia.com/products/hantu-rumah-belanda-2018?queryID=2572c21963c403ba122b5d2970b89079">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-016.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list17"> 
+          <a target="_blank" href="https://www.gramedia.com/products/kamar-no-15?queryID=2572c21963c403ba122b5d2970b89079">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-017.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list18"> 
+          <a target="_blank" href="https://www.gramedia.com/products/rumah-sakit?queryID=2572c21963c403ba122b5d2970b89079">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-018.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list19"> 
+          <a target="_blank" href="https://www.gramedia.com/products/dendam-arwah-jumat-kliwon-edisi-baru?queryID=2572c21963c403ba122b5d2970b89079">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-019.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list20"> 
+          <a target="_blank" href="https://www.gramedia.com/products/penjaga-peti-mati?queryID=2572c21963c403ba122b5d2970b89079">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-020.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list21"> 
+          <a target="_blank" href="https://www.gramedia.com/products/kisah-hantu-legenda-dari-korea?queryID=2572c21963c403ba122b5d2970b89079">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-021.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list22"> 
+          <a target="_blank" href="https://www.gramedia.com/products/mereka-yang-selalu-ada-kumpulan-kisah-misteri?queryID=2572c21963c403ba122b5d2970b89079">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-022.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list23"> 
+          <a target="_blank" href="https://www.gramedia.com/products/penghuni-kelas-sepuluh-2019?queryID=71aa92fe5a531cffa1e4f17958fb8412">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-023.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list24"> 
+          <a target="_blank" href="https://www.gramedia.com/products/risara-sara-wjayanto-dan-risa-saraswati?queryID=71aa92fe5a531cffa1e4f17958fb8412">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-024.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list25"> 
+          <a target="_blank" href="https://www.gramedia.com/products/gerbang-dialog-danur?queryID=71aa92fe5a531cffa1e4f17958fb8412">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-025.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list26"> 
+          <a target="_blank" href="https://www.gramedia.com/products/lewat-tengah-malam-ganjil?queryID=71aa92fe5a531cffa1e4f17958fb8412">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-026.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list27"> 
+          <a target="_blank" href="https://www.gramedia.com/products/ivanna-van-dijk?queryID=e30033d69faee11a7c7a5bade72a2b4b">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-027.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list28"> 
+          <a target="_blank" href="https://www.gramedia.com/products/ritual?queryID=e30033d69faee11a7c7a5bade72a2b4b">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-028.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list29"> 
+          <a target="_blank" href="https://www.gramedia.com/products/surat-dari-kematian?queryID=e30033d69faee11a7c7a5bade72a2b4b">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-029.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list30"> 
+          <a target="_blank" href="https://www.gramedia.com/products/senjakala?queryID=e30033d69faee11a7c7a5bade72a2b4b">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-030.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list31"> 
+          <a target="_blank" href="https://www.gramedia.com/products/rasuk-0?queryID=e30033d69faee11a7c7a5bade72a2b4b">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-031.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list32"> 
+          <a target="_blank" href="https://www.gramedia.com/products/air-mandi-mayat?queryID=887a38d62b5fbf5bc2a19a26e06eb5e7">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-032.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list33"> 
+          <a target="_blank" href="https://www.gramedia.com/products/aku-tahu-kapan-kamu-mati?queryID=887a38d62b5fbf5bc2a19a26e06eb5e7">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-033.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list34"> 
+          <a target="_blank" href="https://www.gramedia.com/products/school-horror?queryID=fcdf2911a7c2a5a66eb6e628470c4ff1">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-034.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list35"> 
+          <a target="_blank" href="https://www.gramedia.com/products/ketika-iblis-akhirnya-memberi-nasihat?queryID=329efde1e638d303c7fe8c2120526c10">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-035.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list36"> 
+          <a target="_blank" href="https://www.gramedia.com/products/22-kisah-horor-super-serem?queryID=3dc971b864f31d2587c29fb8d1d94007">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-036.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list37"> 
+          <a target="_blank" href="https://www.gramedia.com/products/telepon-misterius?queryID=3baee35b77506041ca87b453a3b8776c">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-037.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list38"> 
+          <a target="_blank" href="https://www.gramedia.com/products/kisah-serem-ketemu-hantu-di-jogja?queryID=ed66b3a695c0934ddbd8b7b8711442f2">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-038.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list39"> 
+          <a target="_blank" href="https://www.gramedia.com/products/kisah-serem-ketemu-hantu-di-bali?queryID=ed66b3a695c0934ddbd8b7b8711442f2">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-039.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list40"> 
+          <a target="_blank" href="https://www.gramedia.com/products/mayat-di-kolong-dipan?queryID=ed66b3a695c0934ddbd8b7b8711442f2">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-040.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list41"> 
+          <a target="_blank" href="https://www.gramedia.com/products/kuburan-dalam-rumah?queryID=ed66b3a695c0934ddbd8b7b8711442f2">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-041.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list42"> 
+          <a target="_blank" href="https://www.gramedia.com/products/the-motel?queryID=444b4e946dff20858e21187e2f294fd3">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-042.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list43"> 
+          <a target="_blank" href="https://www.gramedia.com/products/darklit-kosong?queryID=444b4e946dff20858e21187e2f294fd3">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-043.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list44"> 
+          <a target="_blank" href="https://www.gramedia.com/products/salon-tua-hati2-dengan-rambutmu?queryID=444b4e946dff20858e21187e2f294fd3">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-044.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list45"> 
+          <a target="_blank" href="https://www.gramedia.com/products/misteri-lemari-berhantu?queryID=444b4e946dff20858e21187e2f294fd3">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-045.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list46"> 
+          <a target="_blank" href="https://www.gramedia.com/products/hantu-penunggu-mall?queryID=444b4e946dff20858e21187e2f294fd3">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-046.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list47"> 
+          <a target="_blank" href="https://www.gramedia.com/products/misteri-hutan-larangan?queryID=4e22da56d222458493b5a37289383a47">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-047.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list48"> 
+          <a target="_blank" href="https://www.gramedia.com/products/diary-arwah?queryID=4e22da56d222458493b5a37289383a47">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-048.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list49"> 
+          <a target="_blank" href="https://www.gramedia.com/products/pulau-terlarang-1?queryID=4e22da56d222458493b5a37289383a47">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-049.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list50"> 
+          <a target="_blank" href="https://www.gramedia.com/products/setan-amnesia-ed-terbaru?queryID=4e22da56d222458493b5a37289383a47">
+              <img class="image" src="{{ url_for('static', filename='/terkejut/TK-050.jpg') }}" alt="">
+          </a>
+        </li>
+      </ul>
+
+      <style>
+        .custom-btn {
+          width: 130px;
+          height: 40px;
+          color: #fff;
+          border-radius: 5px;
+          padding: 10px 25px;
+          font-family: 'Lato', sans-serif;
+          font-weight: 500;
+          background: transparent;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          display: inline-block;
+          box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+          7px 7px 20px 0px rgba(0,0,0,.1),
+          4px 4px 5px 0px rgba(0,0,0,.1);
+          outline: none;
+        }
+        
+        /* 1 */
+        .btn-1 {
+          background: rgb(6,14,131);
+          background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+          border: none;
+        }
+        .btn-1:hover {
+        background: rgb(0,3,255);
+        background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+        }
+      </style>
+
+      <button type="button" name="list" id="list">Button</button>
+
+      <script>
+        $('#list1').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Buku Harian Terkutuk',
+            html: 'Penulis: Ciko Satrio,Dkk <br> Publisher: Mizan Publishing <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786024204648_9786024204648.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/komik-fantasteen-51-buku-harian-terkutuk?queryID=da37e936fd30f20597655f70881d0380"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list2').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Terkutuk dan Kisah-kisah Mengerikan Lainnya',
+            html: 'Penulis: Yudhi Herwibowo <br> Publisher: Elex Media Komputindo <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786230016486_cover_Terkutuk-1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/terkutuk-dan-kisah-kisah-mengerikan-lainnya?queryID=da37e936fd30f20597655f70881d0380"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list3').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Days of Teror',
+            html: 'Penulis: Ruwi Meita <br> Publisher: Bukune <br> Tahun: 2015',
+            imageUrl: 'https://books.google.co.id/books/publisher/content?id=dsvvCAAAQBAJ&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U1x2aPyOKi3DeIiG8kx24K2vV30rg&w=1280',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/terkutuk-dan-kisah-kisah-mengerikan-lainnya?queryID=da37e936fd30f20597655f70881d0380"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list4').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Teror Diari Tua',
+            html: 'Penulis: Arumi E. <br> Publisher: PT Gramedia Pustaka Utama <br> Tahun: 2017',
+            imageUrl: 'https://books.google.co.id/books/publisher/content?id=ieA8DwAAQBAJ&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U1-l418a69YhpJ85R5_altoeqynIA&w=1280',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.google.co.id/books/edition/Teenlit_Teror_Diari_Tua/ieA8DwAAQBAJ?hl=id&gbpv=0"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list5').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Teror Liburan Sekolah',
+            html: 'Penulis: Risa Saraswati <br> Publisher: Bukune <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/308afcdf-b1bb-4ddc-a849-f022fb6fb518_43.jpeg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/jurnal-risa-teror-liburan-sekolah?queryID=be68905f4a62e116a30d1fc49c80a8c6"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list6').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Dalam Teror Arwah',
+            html: 'Penulis: Jounatan & Guntur Alam <br> Publisher: Elex Media Komputindo <br> Tahun: 2021',
+            imageUrl: 'https://s3-ap-southeast-1.amazonaws.com/ebook-previews/62940/220082/1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/dalam-teror-arwah?queryID=be68905f4a62e116a30d1fc49c80a8c6"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list7').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: 13 Kisah Horor KKN',
+            html: 'Penulis: Jan Mandalino <br> Publisher: Araska Publisher <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786237145950.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/13-kisah-horor-kkn?queryID=2dfaf8063bab88c02cb7538c454a5d90"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list8').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Penghuni Kamar Mayat',
+            html: 'Penulis: Rubianti <br> Publisher: Penerbit Gerrmedia Komik <br> Tahun: 2016',
+            imageUrl: 'https://s3-ap-southeast-1.amazonaws.com/ebook-previews/33280/108844/1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/conf-penghuni-kamar-mayat?queryID=2dfaf8063bab88c02cb7538c454a5d90"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list9').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Memanggil Hantu',
+            html: 'Penulis: Rizqi Turama, Sen Shaka <br> Publisher: Penerbit Gerrmedia Komik <br> Tahun: 2016',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/ID_PGKO2016MTH06MHAN_C.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/conf-memanggil-hantu?queryID=2dfaf8063bab88c02cb7538c454a5d90"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list10').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: 13 Kisah Horor Kuntilanak',
+            html: 'Penulis: Tirta Wisanggeni <br> Publisher: Araska Publisher <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786023003464_13_kisah_horor_kuntilanak.jpeg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/13-kisah-horor-kuntilanak?queryID=2dfaf8063bab88c02cb7538c454a5d90"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list11').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Jembatan Horor',
+            html: 'Penulis: Nikmatus S,eka Yulistia <br> Publisher: Authenia <br> Tahun: 2016',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786021010846_jembatan-horor.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/jembatan-horor?queryID=884dcf728441656eebffca8d25e82ea6"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list12').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Dari Jendela Lantai Tiga',
+            html: 'Penulis: Yf Sarbini, Y.F. Sarbini <br> Publisher: Kakilangist Kencana <br> Tahun: 2015',
+            imageUrl: 'https://cdn.gramedia.com/uploads/images/1/37306/big_covers/ID_PRENA2017MTH04DJLT_B.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/dari-jendela-lantai-tiga?queryID=f10d6d8f9c54713b7e40408b4e67f303"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list13').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Tumbal',
+            html: 'Penulis: Jounatan & Guntur Alam <br> Publisher: Elex Media Komputindo <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020451190_Tumbal.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/tumbal?queryID=f10d6d8f9c54713b7e40408b4e67f303"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list14').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Arwah',
+            html: 'Penulis: Jounatan & Guntur Alam <br> Publisher: Elex Media Komputindo <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020451176_Arwah.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/arwah?queryID=f10d6d8f9c54713b7e40408b4e67f303"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list15').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Merinding',
+            html: 'Penulis: Tuti Kasih <br> Publisher: Bhuana Ilmu Komputer <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786232164161_Merinding.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/merinding?queryID=2572c21963c403ba122b5d2970b89079"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list16').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Hantu Rumah Belanda',
+            html: 'Penulis: Embart Nugroho <br> Publisher: Media Pressindo <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786025752124_Hantu-Rumah-Belanda-2018.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/hantu-rumah-belanda-2018?queryID=2572c21963c403ba122b5d2970b89079"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list17').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Kamar No.15',
+            html: 'Penulis: Erby S. <br> Publisher: Histeria <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786237115533.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/kamar-no-15?queryID=2572c21963c403ba122b5d2970b89079"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list18').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Rumah Sakit',
+            html: 'Penulis: Ari Keling <br> Publisher: Laksana <br> Tahun:2018 ',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/RUMAH-SAKIT-edit.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/rumah-sakit?queryID=2572c21963c403ba122b5d2970b89079"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list19').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Dendam Arwah Jumat Kliwon',
+            html: 'Penulis: Ahmad Sufiatur Rahman, Donatus A. Nugroho <br> Publisher: Narasi <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/img702.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/dendam-arwah-jumat-kliwon-edisi-baru?queryID=2572c21963c403ba122b5d2970b89079"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list20').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Penjaga Peti Mati',
+            html: 'Penulis: Abell <br> Publisher: Yanita <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/PENJAGA-PETI-MATI-edit.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/penjaga-peti-mati?queryID=2572c21963c403ba122b5d2970b89079"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list21').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Kisah Hantu & Legenda Dari Korea',
+            html: 'Penulis: Karina Tyas Widyaningrum <br> Publisher: Histeria <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786025907722_kisah_hantu_dan_legenda_dari_korea.jpeg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/kisah-hantu-legenda-dari-korea?queryID=2572c21963c403ba122b5d2970b89079"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list22').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Mereka Yang Selalu Ada',
+            html: 'Penulis: Nanung Prasetyo A, et al <br> Publisher: Histeria <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786025907999_Mereka-Yang-Selalu-Ada-Kumpulan-Kisah-Misteri.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/mereka-yang-selalu-ada-kumpulan-kisah-misteri?queryID=2572c21963c403ba122b5d2970b89079"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list23').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Penghuni Kelas Sepuluh',
+            html: 'Penulis: Gamal Komandoko <br> Publisher: Narasi <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/penghuni.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/penghuni-kelas-sepuluh-2019?queryID=71aa92fe5a531cffa1e4f17958fb8412"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list24').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Risara : Sara Wjayanto Dan Risa Saraswati',
+            html: 'Penulis: Sara Wjayanto Dan Risa Saraswati <br> Publisher: Rak Buku <br> Tahun: 2014',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/RISARA--SARA-WJAYANTO-DAN-R.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/risara-sara-wjayanto-dan-risa-saraswati?queryID=71aa92fe5a531cffa1e4f17958fb8412"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list25').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Gerbang Dialog Danur',
+            html: 'Penulis: Risa Saraswati <br> Publisher: Bukune <br> Tahun: 2015',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786022201502_Gerbang-Dialo.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/gerbang-dialog-danur?queryID=71aa92fe5a531cffa1e4f17958fb8412"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list26').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Lewat Tengah Malam - Ganjil',
+            html: 'Penulis: Sweta Kartika <br> Publisher: m&c! <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786230304668.jpeg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/lewat-tengah-malam-ganjil?queryID=71aa92fe5a531cffa1e4f17958fb8412"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list27').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ivanna Van Dijk',
+            html: 'Penulis: Risa Saraswati <br> Publisher: Bukune <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786022202752_Ivanna.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/ivanna-van-dijk?queryID=e30033d69faee11a7c7a5bade72a2b4b"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list28').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ritual',
+            html: 'Penulis: Jounatan & Guntur Alam <br> Publisher: Elex Media Komputindo <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786230016332_Ritual.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/ritual?queryID=e30033d69faee11a7c7a5bade72a2b4b"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list29').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Surat dari Kematian',
+            html: 'Penulis: Adham T.Fusuma <br> Publisher: Falcon Publishing <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786026714404_Surat_dari_Kematian.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/surat-dari-kematian?queryID=e30033d69faee11a7c7a5bade72a2b4b"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list30').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Senjakala',
+            html: 'Penulis: Risa Saraswati <br> Publisher: Bukune <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786022202943_senjakala.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/senjakala?queryID=e30033d69faee11a7c7a5bade72a2b4b"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list31').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Rusuk',
+            html: 'Penulis: Risa Saraswati <br> Publisher: Bukune <br> Tahun: 2015',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786022201663_Rasuk.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/rasuk-0?queryID=e30033d69faee11a7c7a5bade72a2b4b"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list32').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Air Mandi Mayat',
+            html: 'Penulis: Randu Alamsyah <br> Publisher: Coconut Books <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786025508479_air_mandi_mayat.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/air-mandi-mayat?queryID=887a38d62b5fbf5bc2a19a26e06eb5e7"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list33').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Aku Tahu Kapan Kamu Mati',
+            html: 'Penulis: Arumi E. <br> Publisher: Loveable <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786025406720_Aku-Tahu-Kapan-Kamu-Mati.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/aku-tahu-kapan-kamu-mati?queryID=887a38d62b5fbf5bc2a19a26e06eb5e7"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list34').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: School Horror',
+            html: 'Penulis: Ratu Bintang <br> Publisher: Coconut Books <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/SCHOOL-HORROR-edit.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/school-horror?queryID=fcdf2911a7c2a5a66eb6e628470c4ff1"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list35').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ketika Iblis Akhirnya Memberi Nasihat',
+            html: 'Penulis: Ust. Arifin Idham <br> Publisher: Mueeza <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786237210757.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/ketika-iblis-akhirnya-memberi-nasihat?queryID=329efde1e638d303c7fe8c2120526c10"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list36').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: 22 Kisah Horor Super Serem !',
+            html: 'Penulis: Teguh Soeryanto <br> Publisher: Galmas Publisher <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020983813.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/22-kisah-horor-super-serem?queryID=3dc971b864f31d2587c29fb8d1d94007"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list37').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Telepon Misterius',
+            html: 'Penulis: Riani Suhandi <br> Publisher: Ping!!! <br> Tahun: 2015',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786022961451.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/telepon-misterius?queryID=3baee35b77506041ca87b453a3b8776c"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list38').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Kisah Serem Ketemu Hantu Di Jogja',
+            html: 'Penulis: Teguh Soeryanto <br> Publisher: Abata <br> Tahun: 2016',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786026023247_22218.jpeg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/kisah-serem-ketemu-hantu-di-jogja?queryID=ed66b3a695c0934ddbd8b7b8711442f2"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list39').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Kisah Serem Ketemu Hantu Di Bali',
+            html: 'Penulis: Teguh Soeryanto <br> Publisher: Solusi Distribusi <br> Tahun: 2016',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786026023209_kisah_serem_ketemu_hantu_di_bali.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/kisah-serem-ketemu-hantu-di-bali?queryID=ed66b3a695c0934ddbd8b7b8711442f2"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list40').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Mayat Di Kolong Dipan',
+            html: 'Penulis: Erby S. <br> Publisher: Scritto <br> Tahun: 2016',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786021659809_mayat_di_kolong_dipan.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/mayat-di-kolong-dipan?queryID=ed66b3a695c0934ddbd8b7b8711442f2"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list41').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Kuburan dalam Rumah',
+            html: 'Penulis: Erby S. <br> Publisher: Scritto <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786026178046_9786026178046.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/kuburan-dalam-rumah?queryID=ed66b3a695c0934ddbd8b7b8711442f2"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list42').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: The Motel',
+            html: 'Penulis: Erby S. <br> Publisher: Anak Hebat Indonesia <br> Tahun: 2016',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786026380623_The-Motel.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/the-motel?queryID=444b4e946dff20858e21187e2f294fd3"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list43').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Darklit : Kosong',
+            html: 'Penulis: Ade Igama @kisahorror <br> Publisher: Benteng Pustaka <br> Tahun: 2015',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/darklit-kosong.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/darklit-kosong?queryID=444b4e946dff20858e21187e2f294fd3"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list44').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Salon Tua : Hari-hati dengan Rambutmu...!',
+            html: 'Penulis: Christina Juzwar <br> Publisher: Benteng Pustaka <br> Tahun: 2015',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786021383513.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/salon-tua-hati2-dengan-rambutmu?queryID=444b4e946dff20858e21187e2f294fd3"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list45').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Misteri Lemari Berhantu',
+            html: 'Penulis: Abell <br> Publisher: Yanita <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786026630087_Misteri-Lemari-Berhantu.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/misteri-lemari-berhantu?queryID=444b4e946dff20858e21187e2f294fd3"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list46').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Hantu Penunggu Mall',
+            html: 'Penulis: Lewi Satriani <br> Publisher: Media Pressindo <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9789799115461_Hantu-Penunggu-Mall.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/hantu-penunggu-mall?queryID=444b4e946dff20858e21187e2f294fd3"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list47').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Misteri Hutan Larangan',
+            html: 'Penulis: Yoyon Indra Joni <br> Publisher: Erzatama Karya Abadi <br> Tahun: 2016',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786027240629.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/misteri-hutan-larangan?queryID=4e22da56d222458493b5a37289383a47"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list48').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Diary Arwah',
+            html: 'Penulis: Margaluwih <br> Publisher: Moka Media <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786025199301_Diary-Arwah.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/diary-arwah?queryID=4e22da56d222458493b5a37289383a47"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list49').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Pulau Terlarang ',
+            html: 'Penulis: Vasca Vannisa <br> Publisher: Mata Aksara <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786026129598_Pulau-Terlarang.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/pulau-terlarang-1?queryID=4e22da56d222458493b5a37289383a47"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list50').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Setan Amnesia Edisi Terbaru',
+            html: 'Penulis: Desty Ipe <br> Publisher: Kauna Pustaka <br> Tahun: 2015',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786027608955.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/setan-amnesia-ed-terbaru?queryID=4e22da56d222458493b5a37289383a47"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+      </script>
+      
+      <!-- Jquery and Js Plugins -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/jquery-2.1.1.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/jquery.validate.min.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/bootstrap.min.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/plugins.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/validator.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/custom.js') }}">
+</script>
+
+
+</body>
+</html>

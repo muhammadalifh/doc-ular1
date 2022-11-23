@@ -379,6 +379,11 @@ def senang():
 def sedih():
     return render_template('sedih.html')
 
+@app.route('/terkejut')
+def terkejut():
+    return render_template('terkejut.html')
+
+
 @app.route('/after', methods=['GET', 'POST'])
 def after():
     img = request.files['file1']
