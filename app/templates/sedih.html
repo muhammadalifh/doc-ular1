@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Sedih</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Icon -->
+	<link rel="shortcut icon"
+    href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700%7CRoboto:300,400,500%7CMuli:300,400"
+    rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/bootstrap.min.css') }}
+        type="text/css" media="all">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/animate.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/owl.carousel.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/owl.theme.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/magnific-popup.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/ionicons.min.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/style.css') }}
+        type="text/css" media="all">
+
+</head>
+<body>
+
+<div class="wrapper">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bukuku </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a class="page-scroll" href="#main">Home</a></li>
+                    <li><a class="page-scroll" href="#features">Features</a></li>
+                    <li><a class="page-scroll" href="#reviews">Reviews</a></li>
+                    <li><a class="page-scroll" href="#buy">Pricing</a></li>
+                    <li><a class="page-scroll" href="#kelompok">Kelompok</a></li>
+                    <li><a href="#buy" class="btn btn-nav page-scroll wow fadeInDown"
+                            data-wow-delay="0.3s"><span>Buy Now</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><!-- /.navbar-collapse -->
+</div>
+
+
+    <style>
+        :root {
+            --columns: 3;
+            --yellow: rgba(238, 188, 31, 1);
+            --pink: rgba(255, 82, 145, 1);
+            --blue: rgba(64, 98, 187, 1);
+            --green: rgba(6, 141, 126, 1);
+            --white: rgba(248, 255, 229, 1);
+          }
+          
+
+          
+          .unordered{
+            display:grid;
+            grid-template-columns: repeat(var(--columns),1fr);
+            margin: 200px -40px;
+          }
+          
+          .list{
+            grid-column-end: span 2;
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            margin-top: -50%;
+          }
+          
+          .list:nth-child(2n){
+            grid-column-start:2;
+          }
+          
+          .list::before, .list::after {
+            content:'';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: 50% 100%,50% 100%;
+            background-position: left, right;
+          }
+          
+          .list::before{
+            z-index: -10;
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            background-repeat: no-repeat;
+            background-image: linear-gradient(-45deg,var(--yellow) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--yellow) 60%), linear-gradient(45deg,var(--yellow) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--yellow) 60%);
+          }
+          
+          .list::after{
+            clip-path: polygon(100% 50%, 50% 100%, 0 50%, 20% 50%, 50% 80%,80% 50%);
+            -webkit-clip-path: polygon(100% 50%, 50% 100%, 0 50%, 20% 50%, 50% 80%,80% 50%);
+            background-repeat: no-repeat;
+            background-image: linear-gradient(45deg,var(--yellow) 40%,var(--green) 40%), linear-gradient(-45deg,var(--yellow) 40%,var(--green) 40%);
+          }
+          
+          .list:nth-child(2n)::before{
+            background-image: linear-gradient(-45deg,var(--pink) 53.5%,var(--blue) 53.5%,var(--blue) 60%,var(--pink) 60%), linear-gradient(45deg,var(--pink) 53.5%,var(--blue) 53.5%,var(--blue) 60%,var(--pink) 60%);
+          }
+          
+          .list:nth-child(2n)::after{
+            background-image: linear-gradient(45deg,var(--pink) 40%,var(--blue) 40%), linear-gradient(-45deg,var(--pink) 40%,var(--blue) 40%);
+          }
+          
+          .list:nth-child(5n)::before{
+            background-image: linear-gradient(-45deg,var(--green) 53.5%,var(--pink) 53.5%,var(--pink) 60%,var(--green) 60%), linear-gradient(45deg,var(--green) 53.5%,var(--pink) 53.5%,var(--pink) 60%,var(--green) 60%);
+          }
+          
+          .list:nth-child(5n)::after{
+            background-image: linear-gradient(45deg,var(--green) 40%,var(--pink) 40%), linear-gradient(-45deg,var(--green) 40%,var(--pink) 40%);
+          }
+          
+          .list:nth-child(7n)::before,.list:nth-child(7n-4)::before{
+            background-image: linear-gradient(-45deg,var(--blue) 53.5%,var(--white) 53.5%,var(--white) 60%,var(--blue) 60%), linear-gradient(45deg,var(--blue) 53.5%,var(--white) 53.5%,var(--white) 60%,var(--blue) 60%);
+          }
+          
+          .list:nth-child(7n)::after,.list:nth-child(7n-4)::after{
+            background-image: linear-gradient(45deg,var(--blue) 40%,var(--white) 40%), linear-gradient(-45deg,var(--blue) 40%,var(--white) 40%);
+          }
+          
+          .list:nth-child(9n)::before,.list:nth-child(9n-5)::before{
+            background-image: linear-gradient(-45deg,var(--white) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--white) 60%), linear-gradient(45deg,var(--white) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--white) 60%);
+          }
+          
+          .list:nth-child(9n)::after,.list:nth-child(9n-5)::after{
+            background-image: linear-gradient(45deg,var(--white) 40%,var(--green) 40%), linear-gradient(-45deg,var(--white) 40%,var(--green) 40%);
+          }
+          
+          .image{
+            position: absolute;
+            width: 43%;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-60%);
+            box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
+            transition-property: transform;
+            transition-duration: .3s;
+          }
+          
+          .image:hover{
+            transform: translateX(-40%) translateY(-70%) rotatez(25deg);
+          }
+          @media (min-width:450px){
+            .unordered{
+              margin: 190px 40px;
+            }
+          }
+          @media (min-width:600px){
+            :root {
+              --columns: 5;
+            }
+            .list:nth-child(2n){
+              grid-column-start:auto;
+            }
+            .list:nth-child(4n-1){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:900px){
+            :root {
+              --columns: 7;
+            }
+            .list:nth-child(4n-1){
+              grid-column-start:auto;
+            }
+            .list:nth-child(6n-2){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:1200px){
+            :root {
+              --columns: 9;
+            }
+            .list:nth-child(6n-2){
+              grid-column-start:auto;
+            }
+            .list:nth-child(8n-3){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:1500px){
+            :root {
+              --columns: 11;
+            }
+            .list:nth-child(8n-3){
+              grid-column-start:auto;
+            }
+            .list:nth-child(10n-4){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:1800px){
+            :root {
+              --columns: 13;
+            }
+            .list:nth-child(10n-4){
+              grid-column-start:auto;
+            }
+            .list:nth-child(12n-5){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:2100px){
+            :root {
+              --columns: 15;
+            }
+            .list:nth-child(12n-5){
+              grid-column-start:auto;
+            }
+            .list:nth-child(14n-6){
+              grid-column-start:2;
+            }
+          }
+          
+          
+          
+    </style>
+
+    <br><br><br><br>
+
+    <center>
+        <h1>Buku Dengan Prediksi Sedih 😭</h1>
+    </center>
+
+    <ul class="unordered">
+        <li class="list" id="list1"> 
+            <a target="_blank" href="https://www.google.co.id/books/edition/Cantik_Itu_Luka_Ed_Kertas_Koran/-VWFJ00mffUC?hl=id&gbpv=0">
+                <img class="image" src="{{ url_for('static', filename='/sedih/SD-001.jpeg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list2"> 
+            <a target="_blank" href="https://www.gramedia.com/products/tokyo-dan-perayaan-kesedihan?utm_source=blog&utm_medium=ContentMarketing&utm_campaign=RekomendasiNovelPalingMemilukandanMenyayatHatiTokyodanPerayaanKesedihan">
+                <img class="image" src="{{ url_for('static', filename='/sedih/SD-002.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list3"> 
+            <a target="_blank" href="https://ebooks.gramedia.com/id/buku/seperti-dendam-rindu-harus-dibayar-tuntas">
+                <img class="image" src="{{ url_for('static', filename='/sedih/SD-003.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list4"> 
+            <a target="_blank" href="https://openlibrary.org/books/OL3467856M/Gelak_sedih?mode=all">
+                <img class="image" src="{{ url_for('static', filename='/sedih/SD-004.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list5"> 
+            <a target="_blank" href="https://www.gutenberg.org/ebooks/20817">
+                <img class="image" src="{{ url_for('static', filename='/sedih/SD-005.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list6"> 
+          <a target="_blank" href="https://www.gutenberg.org/ebooks/37873">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-006.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list7"> 
+          <a target="_blank" href="http://www.bukabuku.com/browses/product/9786230022104/bacalah-saat-hatimu-sedih.html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-007.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list8"> 
+          <a target="_blank" href="http://www.bukabuku.com/browses/product/9786230025150/ramadhan-maaf-kami-masih-sibuk-(limited-edition).html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-008.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list9"> 
+          <a target="_blank" href="http://www.bukabuku.com/browses/product/9789797946302/kita-semua-pernah-sedih.html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-009.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list10"> 
+          <a target="_blank" href="http://www.bukabuku.com/browses/product/9786027870574/apa-yang-membuatku-sedih.html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-010.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list11"> 
+          <a target="_blank" href="https://www.gramedia.com/products/hujan-2">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-011.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list12"> 
+          <a target="_blank" href="https://www.gramedia.com/products/hujan-bulan-juni?queryID=3bd7db1b0e3284aec89cfc62ecc6eec4">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-012.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list13"> 
+          <a target="_blank" href="https://www.gramedia.com/products/menangis-boleh-menyerah-jangan-boleh-kok-netesin-air-mata?queryID=e7169a8ec1e942757e0ae54536c13e26">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-013.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list14"> 
+          <a target="_blank" href="https://www.google.co.id/books/edition/Diam/LaaSDwAAQBAJ?hl=id&gbpv=1&dq=diam&pg=PT1&printsec=frontcover">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-014.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list15"> 
+          <a target="_blank" href="https://www.google.co.id/books/edition/Di_tepi_sungei_Piedra_aku_duduk_dan_mena/j3tsUFQNiAEC?hl=id&gbpv=0">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-015.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list16"> 
+          <a target="_blank" href="https://www.google.co.id/books/edition/_/FVRFDwAAQBAJ?hl=id&sa=X&ved=2ahUKEwiwkZnMjpz7AhUKTWwGHRAODRUQre8FegQIChAG">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-016.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list17"> 
+          <a target="_blank" href="https://www.bukukita.com/Agama/Islam/141798-Sedih-Pangkal-Bahagia.html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-017.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list18"> 
+          <a target="_blank" href="https://www.google.co.id/books/edition/ya_allah_aku_tak_ingin_sendiri/uX4TQiSnH_QC?hl=id&gbpv=1&dq=sendiri&pg=PA6&printsec=frontcover">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-018.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list19"> 
+          <a target="_blank" href="https://www.goodreads.com/book/show/1677693.Rumah_Kaca">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-019.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list20"> 
+          <a target="_blank" href="https://www.goodreads.com/book/show/1376220.Hafalan_Shalat_Delisa">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-020.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list21"> 
+          <a target="_blank" href="https://www.goodreads.com/book/show/969177.Ayat_Ayat_Cinta">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-021.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list22"> 
+          <a target="_blank" href="https://manybooks.net/titles/dykehenr15931593615936.html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-022.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list23> 
+          <a target="_blank" href="https://manybooks.net/titles/wirtm3444134441.html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-023.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list24"> 
+          <a target="_blank" href="https://www.goodreads.com/book/show/5652131-sunset-bersama-rosie">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-024.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list25"> 
+          <a target="_blank" href="https://www.gramedia.com/products/berbahagialah-sedih-itu-hanyalah-mitos-kebahagiaan-itu-ada?queryID=7fb2cbaf9c805cf3a253d915a4f2499a">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-025.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list26"> 
+          <a target="_blank" href="https://www.gramedia.com/products/loneliness-is-my-best-firend">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-026.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list27"> 
+          <a target="_blank" href="https://www.gramedia.com/products/senja-hujan-cerita-yang-telah-usai?queryID=2b2bc24bc9b1d8f3a19e2f14890e3f3d">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-027.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list28"> 
+          <a target="_blank" href="https://www.gramedia.com/products/ketika-hujan-menangis?queryID=53616516f7bb587f60769625b04f8cdd">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-028.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list29"> 
+          <a target="_blank" href="https://www.gramedia.com/products/surat-kecil-untuk-ayah-edisi-revisi?queryID=d339a3f66c8fc51a13c1a36b5cf73f13">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-029.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list30"> 
+          <a target="_blank" href="https://www.gramedia.com/products/cerita-untuk-ayah?queryID=d339a3f66c8fc51a13c1a36b5cf73f13">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-030.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list31"> 
+          <a target="_blank" href="https://www.gramedia.com/products/sumur?queryID=132f110429c42d9e215fc8f05ea2de1d">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-031.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list32"> 
+          <a target="_blank" href="https://www.gramedia.com/products/funiculi-funicula-kisah-kisah-yang-baru-terungkap?queryID=2d9a568fbc27f28c5849d9bbee4b37b0">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-032.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list33"> 
+          <a target="_blank" href="https://www.gramedia.com/products/tentang-kamu-1?queryID=28f81fa4fa56575813eb23ee67f4b74c">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-033.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list34"> 
+          <a target="_blank" href="https://www.gramedia.com/products/laut-bercerita?queryID=f90793ae38a33dc7901e0a4c2b91c6e7">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-034.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list35"> 
+          <a target="_blank" href="https://www.gramedia.com/products/dikta-hukum?queryID=69d57572944b61b7979fd9160458b074">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-035.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list36"> 
+          <a target="_blank" href="https://www.gramedia.com/products/daun-yang-jatuh-tak-pernah-membenci-angin-cover-baru-2018?queryID=1aa50b76b5f3737eab2cd06114b7c1a6">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-036.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list37"> 
+          <a target="_blank" href="https://www.gramedia.com/products/seribu-wajah-ayah?queryID=06a50b83bfb34cd2555cd3d99efa9510">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-037.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list38"> 
+          <a target="_blank" href="https://www.gramedia.com/products/harapan-dari-tempat-paling-jauh?queryID=580616b331c5de371df25955b5a67e9a">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-038.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list39"> 
+          <a target="_blank" href="https://www.gramedia.com/products/ibu-tercinta-please-look-after-mom?queryID=6368065267a8089cc6c548efc7619014">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-039.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list40"> 
+          <a target="_blank" href="https://www.gramedia.com/products/turning-page?queryID=fd2e39590de483a76060197f103b3c31">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-040.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list41"> 
+          <a target="_blank" href="https://www.gramedia.com/products/pulang-pergi-2?queryID=8555bc9893d704c8f6e5d52ba70fffcc">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-041.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list42"> 
+          <a target="_blank" href="https://www.gramedia.com/products/ayahku-bukan-pembohong-cover-baru-2018?utm_source=bestseller&utm_medium=bestsellerbuku&utm_campaign=seo&utm_content=BestSellerRekomendasi">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-042.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list43"> 
+          <a target="_blank" href="https://www.bukukita.com/Buku-Novel/Spiritualitas/166482-JALAN-PANJANG-MENUJU-PULANG.html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-043.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list44"> 
+          <a target="_blank" href="https://www.goodreads.com/book/show/39800760-i-am-sarahza">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-044.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list45"> 
+          <a target="_blank" href="https://www.gramedia.com/products/mimpi-sejuta-dolar?utm_source=bestseller&utm_medium=bestsellerbuku&utm_campaign=seo&utm_content=BestSellerRekomendasi">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-045.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list46"> 
+          <a target="_blank" href="https://www.bukukita.com/Buku-Novel/Drama/155261-Laut-Bercerita.html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-046.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list47"> 
+          <a target="_blank" href="https://www.bukukita.com/Buku-Novel/Drama/56168-A-Thousand-Splendid-Suns.html">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-047.jpeg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list48"> 
+          <a target="_blank" href="https://lontara.app/books/5fa121b52bb8752aee4dd3c0">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-048.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list49"> 
+          <a target="_blank" href="https://www.goodreads.com/book/show/18143977-all-the-light-we-cannot-see">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-049.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list50"> 
+          <a target="_blank" href="https://lontara.app/books/5e61cfd5dd81141e6b34da67">
+              <img class="image" src="{{ url_for('static', filename='/sedih/SD-050.jpg') }}" alt="">
+          </a>
+        </li>
+      </ul>
+
+      <style>
+        .custom-btn {
+          width: 130px;
+          height: 40px;
+          color: #fff;
+          border-radius: 5px;
+          padding: 10px 25px;
+          font-family: 'Lato', sans-serif;
+          font-weight: 500;
+          background: transparent;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          display: inline-block;
+          box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+          7px 7px 20px 0px rgba(0,0,0,.1),
+          4px 4px 5px 0px rgba(0,0,0,.1);
+          outline: none;
+        }
+        
+        /* 1 */
+        .btn-1 {
+          background: rgb(6,14,131);
+          background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+          border: none;
+        }
+        .btn-1:hover {
+        background: rgb(0,3,255);
+        background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+        }
+      </style>
+
+      <button type="button" name="list" id="list">Button</button>
+
+      <script>
+        $('#list1').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Cantik Itu Luka',
+            html: 'Penulis: Eka Kurniawan <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2006',
+            imageUrl: 'https://books.google.co.id/books/content?id=-VWFJ00mffUC&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U2OzLUIS3XseDaxe1YNWjpHGCg0HQ&w=1280',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.google.co.id/books/edition/Cantik_Itu_Luka_Ed_Kertas_Koran/-VWFJ00mffUC?hl=id&gbpv=0"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list2').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Tokyo dan Perayaan Kesedihan',
+            html: 'Penulis: Ruth Priscilia Angelina  <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020640846_tokyo_and.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/tokyo-dan-perayaan-kesedihan?utm_source=blog&utm_medium=ContentMarketing&utm_campaign=RekomendasiNovelPalingMemilukandanMenyayatHatiTokyodanPerayaanKesedihan"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list3').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Seperti Dendam, Rindu Harus Dibayar Tuntas',
+            html: 'Penulis: Eka Kurniawan  <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2014',
+            imageUrl: 'https://s3-ap-southeast-1.amazonaws.com/ebook-previews/10084/37152/1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://ebooks.gramedia.com/id/buku/seperti-dendam-rindu-harus-dibayar-tuntas"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list4').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Galak Sedih',
+            html: 'Penulis: Eka Kurniawan  <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2005',
+            imageUrl: 'https://th.bing.com/th/id/OIP.KrXpQb_fbRNhhhX66B5qXwAAAA?pid=ImgDet&rs=1',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://openlibrary.org/books/OL3467856M/Gelak_sedih?mode=all"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list5').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: The Mother and Her Child',
+            html: 'Penulis: Lena K. Sadler and William S. Sadler  <br> Publisher: PGDP.net <br> Tahun: 2007',
+            imageUrl: 'https://www.allyoucanbooks.com/sites/default/files/imagecache/book_cover_medium/ebook-cover/the-mother-and-her-child-lena-k-sadler-and-william-s-sadler.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gutenberg.org/ebooks/20817"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list6').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Alone with the Hairy Ainu',
+            html: 'Penulis: Arnold Henry Savage Landor <br> Publisher: PGDP.net <br> Tahun: 2011',
+            imageUrl: 'https://th.bing.com/th/id/R.0339d289b3b82104e27124bb8aadcf3c?rik=1a99oPysHfgAZA&riu=http%3a%2f%2fprodimage.images-bn.com%2fpimages%2f9781108049412_p0_v1_s1200x630.jpg&ehk=vL5GIN0Vr7V6mghncxndJxrmMZ4nBYzsG52UB3TscLM%3d&risl=&pid=ImgRaw&r=0',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gutenberg.org/ebooks/37873"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list7').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Bacalah Saat Hatimu Sedih',
+            html: 'Penulis: Ahmad Rifai Rifan <br> Publisher: Elex Media Komputindo <br> Tahun: 2021',
+            imageUrl: 'http://img.bukabuku.net/product_original/a/2/a275fdfc35d4c996b8e1b7f1bc91f05f.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="http://www.bukabuku.com/browses/product/9786230022104/bacalah-saat-hatimu-sedih.html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list8').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ramadhan, Maaf Kami Masih Sibuk',
+            html: 'Penulis: Ahmad Rifai Rifan <br> Publisher: Elex Media Komputindo <br> Tahun: 2021',
+            imageUrl: 'http://img.bukabuku.net/product_original/2/5/259c0da2232435331fdc7ec0aaf1baec.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="http://www.bukabuku.com/browses/product/9786230025150/ramadhan-maaf-kami-masih-sibuk-(limited-edition).html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list9').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Kita Semua Pernah Sedih',
+            html: 'Penulis: Boy Candra <br> Publisher: Media Kita <br> Tahun: 2021',
+            imageUrl: 'http://img.bukabuku.net/product_original/1/4/14b09f5b406cdc9ddd1f004b795061ec.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="http://www.bukabuku.com/browses/product/9789797946302/kita-semua-pernah-sedih.html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list10').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Apa Yang Membuatku Sedih',
+            html: 'Penulis: Daniel Howarth <br> Publisher: Little Kaifa <br> Tahun: 2015',
+            imageUrl: 'http://img.bukabuku.net/product_original/e/e/ee5fd4dbe60e5b0723aa061fd12d8e5a.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="http://www.bukabuku.com/browses/product/9786027870574/apa-yang-membuatku-sedih.html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list11').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Hujan',
+            html: 'Penulis: Tere Liye <br> Publisher: Penerbit Sabak Grap <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/img20220905_11493451.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/hujan-2"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list12').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Hujan Bulan Juni',
+            html: 'Penulis: Sapardi Djoko Damono <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2015',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020318431_Hujan-Bulan-Juni-Sebuah-Novel.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/hujan-bulan-juni-sebuah-novel?queryID=b2483d36f861c0dd595984fa7c6f1b27"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list13').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Menangis Boleh, Menyerah Jangan: Boleh Kok Netesin Air Mata',
+            html: 'Penulis: Wiwid Prasetiyo <br> Publisher: Psikologi Corner <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/img20200822_15531878.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/menangis-boleh-menyerah-jangan-boleh-kok-netesin-air-mata?queryID=e7169a8ec1e942757e0ae54536c13e26"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list14').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Diam',
+            html: 'Penulis: Selly Sanita <br> Publisher: Ahsyara Media Indonesia <br> Tahun: 2019',
+            imageUrl: 'https://books.google.co.id/books/publisher/content?id=LaaSDwAAQBAJ&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U2aqfVvdmleXV4OP0bS3-s89fhqEQ&w=1280',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.google.co.id/books/edition/Diam/LaaSDwAAQBAJ?hl=id&gbpv=1&dq=diam&pg=PT1&printsec=frontcover"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list15').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Di tepi sungei Piedra aku duduk dan menangis',
+            html: 'Penulis: Paulo Coelho <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2005',
+            imageUrl: 'https://books.google.co.id/books/content?id=j3tsUFQNiAEC&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U0CDYqC9Vx1RmTcUW7L5ofK2xNq-A&w=1280',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.google.co.id/books/edition/Di_tepi_sungei_Piedra_aku_duduk_dan_mena/j3tsUFQNiAEC?hl=id&gbpv=0"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list16').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: By The River Piedra I Sat Down and Wept - Di Tepi Sungai Piedra',
+            html: 'Penulis: Paulo Coelho <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2005',
+            imageUrl: 'https://books.google.co.id/books/publisher/content?id=FVRFDwAAQBAJ&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U3U2zhNjfQG6I5mSuQrmjOugsB-Vg&w=1280',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.google.co.id/books/edition/_/FVRFDwAAQBAJ?hl=id&sa=X&ved=2ahUKEwiwkZnMjpz7AhUKTWwGHRAODRUQre8FegQIChAG"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list17').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Sedih Pangkal Bahagia',
+            html: 'Penulis: Cak Aep Jenakawan Kata <br> Publisher: TransMedia Pustaka <br> Tahun: 2016',
+            imageUrl: 'https://koleksiperpus.jakarta.go.id/dispusip/uploaded_files/sampul_koleksi/original/Monograf/88661.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.bukukita.com/Agama/Islam/141798-Sedih-Pangkal-Bahagia.html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list18').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ya allah aku tak ingin sendiri!',
+            html: 'Penulis: Burhan Sodiq <br> Publisher: Niaga Swadaya <br> Tahun: 2007',
+            imageUrl: 'https://books.google.co.id/books/content?id=uX4TQiSnH_QC&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U3qT3XsnGOvA-vhSipYcuHwMJ0Haw&w=1280',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.google.co.id/books/edition/ya_allah_aku_tak_ingin_sendiri/uX4TQiSnH_QC?hl=id&gbpv=1&dq=sendiri&pg=PA6&printsec=frontcover"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list19').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Rumah Kaca',
+            html: 'Penulis: Pramoedya Ananta Toer <br> Publisher: Hasta Mitra <br> Tahun: 2001',
+            imageUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1484031123i/1677693.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.goodreads.com/book/show/1677693.Rumah_Kaca"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list20').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Hafalan Shalat Delisa',
+            html: 'Penulis: Tere Liye <br> Publisher: Republika <br> Tahun: 2007',
+            imageUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1303475676i/1376220.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.goodreads.com/book/show/1376220.Hafalan_Shalat_Delisa"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list21').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ayat-Ayat Cinta',
+            html: 'Penulis: Habiburrahman El-Shirazy <br> Publisher: Republika-Basmala <br> Tahun: 2007',
+            imageUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1439347437i/969177.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.goodreads.com/book/show/969177.Ayat_Ayat_Cinta"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list22').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: The Sad Shepherd',
+            html: 'Penulis: Henry van Dyke <br> Publisher: Online <br> Tahun: 1911',
+            imageUrl: 'https://manybooks.net/sites/default/files/styles/220x330sc/public/old-covers/cover-auto-10459.jpg?itok=181khyQg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://manybooks.net/titles/dykehenr15931593615936.html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list23').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: The Cry at Midnight',
+            html: 'Penulis: Mildred Augustine Wirt <br> Publisher: Online <br> Tahun: 1947',
+            imageUrl: 'https://manybooks.net/sites/default/files/styles/220x330sc/public/old-covers/cover-orig-29685.jpg?itok=DfCcPgBi',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://manybooks.net/titles/wirtm3444134441.html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list24').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Sunset Bersama Rosie',
+            html: 'Penulis: Tere Liye <br> Publisher: Mahaka Publishing <br> Tahun: 2011',
+            imageUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1319506027i/5652131.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.goodreads.com/book/show/5652131-sunset-bersama-rosie"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list25').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Berbahagialah, Sedih Itu Hanyalah Mitos: Kebahagiaan Itu Ada',
+            html: 'Penulis: WEI <br> Publisher: Mueeza <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/berbahagialah.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/berbahagialah-sedih-itu-hanyalah-mitos-kebahagiaan-itu-ada?queryID=7fb2cbaf9c805cf3a253d915a4f2499a"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list26').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Loneliness Is My Best Friend',
+            html: 'Penulis: Alvi Syahrin <br> Publisher: Alvi Ardhi Publishing <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786239700225_-_Ionelines.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/loneliness-is-my-best-firend"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list27').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Senja,Hujan & Cerita Yang Telah Usai',
+            html: 'Penulis: Boy Candra <br> Publisher: Media Kita <br> Tahun: 2015',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9789797944995_senja_hujan-_-cerita-yang-telah-usai.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/senja-hujan-cerita-yang-telah-usai?queryID=2b2bc24bc9b1d8f3a19e2f14890e3f3d"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list28').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ketika Hujan Menangis',
+            html: 'Penulis: Eka Aryani <br> Publisher: Buku Kita Pt <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/KETIKA_HUJAN.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/ketika-hujan-menangis?queryID=53616516f7bb587f60769625b04f8cdd"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list29').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Surat Kecil Untuk Ayah',
+            html: 'Penulis: Boy Candra <br> Publisher: Bukune <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/surat-kecil-edit.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/surat-kecil-untuk-ayah-edisi-revisi?queryID=d339a3f66c8fc51a13c1a36b5cf73f13"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list30').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Cerita untuk Ayah',
+            html: 'Penulis: Candra Aditya <br> Publisher: Kepustakaan Populer Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/cover_Cerita_Untuk_Ayah_page-0001.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/cerita-untuk-ayah?queryID=d339a3f66c8fc51a13c1a36b5cf73f13"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list31').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Sumur',
+            html: 'Penulis: Eka Kurniawan <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020653242_SUMUR.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/sumur?queryID=132f110429c42d9e215fc8f05ea2de1d"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list32').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Funiculi Funicula',
+            html: 'Penulis: Thosikazu Kawaguchi <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/Funiculi_Funicula_2_cov.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/funiculi-funicula-kisah-kisah-yang-baru-terungkap?queryID=2d9a568fbc27f28c5849d9bbee4b37b0"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list33').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Tentang Kamu',
+            html: 'Penulis: Tere Liye <br> Publisher: Penerbit Sabak Grip <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786239554569.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/tentang-kamu-1?queryID=28f81fa4fa56575813eb23ee67f4b74c"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list34').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Laut Bercerita',
+            html: 'Penulis: Leila S. Chudori <br> Publisher: Kepustakaan Populer Gramedia <br> Tahun: 2017',
+            imageUrl: 'https://s3-ap-southeast-1.amazonaws.com/ebook-previews/40678/143505/1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/laut-bercerita?queryID=f90793ae38a33dc7901e0a4c2b91c6e7"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list35').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Dikta & Hukum',
+            html: 'Penulis: Dhiaan Farah <br> Publisher: ASOKA AKSARA X LOVEABLE <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/dikta_dan_hukum.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/dikta-hukum?queryID=69d57572944b61b7979fd9160458b074"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list36').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Daun yang Jatuh Tak Pernah Membenci Angin',
+            html: 'Penulis: Tere Liye <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020331607_Daun-yang-Jatuh-Tak-Pernah-Membenci-Angin-Cover-Baru-2018.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/daun-yang-jatuh-tak-pernah-membenci-angin-cover-baru-2018?queryID=1aa50b76b5f3737eab2cd06114b7c1a6"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list37').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Seribu Wajah Ayah',
+            html: 'Penulis: Nurun Ala <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020522678.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href=""><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list38').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Harapan dari Tempat Paling Jauh',
+            html: 'Penulis: Inggrid Sonya <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/Harapan_dari_Tempat_Paling_Jauh_cov.jpeg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/harapan-dari-tempat-paling-jauh?queryID=580616b331c5de371df25955b5a67e9a"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list39').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ibu Tercinta (Please Look After Mom)',
+            html: 'Penulis: Kyung Sook Shin <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020315409_PLEASE_LOOK_AFTER_MOM.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/ibu-tercinta-please-look-after-mom?queryID=6368065267a8089cc6c548efc7619014"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list40').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Turning Page',
+            html: 'Penulis: Auryn Vientania <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/Turning_Page.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/turning-page?queryID=fd2e39590de483a76060197f103b3c31"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list41').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Pulang Pergi',
+            html: 'Penulis: Tere Liye <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/pulang-pergi_tere_liye.jpeg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/pulang-pergi-2?queryID=8555bc9893d704c8f6e5d52ba70fffcc"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list42').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ayahku (Bukan) Pembohong',
+            html: 'Penulis: Tere Liye <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020331584_Ayahku-Bukan-Pembohong-Cover-Baru-2018.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/ayahku-bukan-pembohong-cover-baru-2018?utm_source=bestseller&utm_medium=bestsellerbuku&utm_campaign=seo&utm_content=BestSellerRekomendasi"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list43').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Jalan Panjang Menuju Pulang',
+            html: 'Penulis: Sofyan <br> Publisher: Republika <br> Tahun: 2019',
+            imageUrl: 'https://bukurepublika.id/wp-content/uploads/2019/02/JJMP_dpn.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.bukukita.com/Buku-Novel/Spiritualitas/166482-JALAN-PANJANG-MENUJU-PULANG.html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list44').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: I am Sarahza',
+            html: 'Penulis: Hanum Salsabiela Rais dan Rangga Almahendra <br> Publisher: Republika <br> Tahun: 2018',
+            imageUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1523439286i/39800760.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.goodreads.com/book/show/39800760-i-am-sarahza"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list45').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Mimpi Sejuta Dollar',
+            html: 'Penulis: Merry Riana <br> Publisher: Gramedia Pustaka Utama <br> Tahun: 2013',
+            imageUrl: 'https://cdn.gramedia.com/uploads/images/1/2057/big_covers/ID_GPU2013MTH02MSD_B.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/mimpi-sejuta-dolar?utm_source=bestseller&utm_medium=bestsellerbuku&utm_campaign=seo&utm_content=BestSellerRekomendasi"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list46').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Laut Bercerita',
+            html: 'Penulis: Laila S Chudori <br> Publisher: Kpg <br> Tahun: 2017',
+            imageUrl: 'https://www.bukukita.com/babacms/displaybuku/105261_f.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.bukukita.com/Buku-Novel/Drama/155261-Laut-Bercerita.html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list47').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: A Thousand Splendid Suns ',
+            html: 'Penulis: Khaled Hosseini <br> Publisher: Qanita <br> Tahun: 2007',
+            imageUrl: 'https://th.bing.com/th/id/OIP.xXdG8KSYlhK12NQlXi1aJAHaLT?pid=ImgDet&rs=1',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.bukukita.com/Buku-Novel/Drama/56168-A-Thousand-Splendid-Suns.html"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list48').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Akhir Sebuah Kisah',
+            html: 'Penulis: Lola Reliza Utami <br> Publisher: Megalitera <br> Tahun: 2020',
+            imageUrl: 'https://static.lontara.app/d0a35dec-92e7-4aec-a740-07cdce5d913d.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://lontara.app/books/5fa121b52bb8752aee4dd3c0"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list49').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: All The Light We Cannot See',
+            html: 'Penulis: Anthony Doer <br> Publisher: Scribner <br> Tahun: 2014',
+            imageUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1451445646i/18143977.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.goodreads.com/book/show/18143977-all-the-light-we-cannot-see"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list50').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Batas Waktu',
+            html: 'Penulis: Indah Mendung <br> Publisher: AE Publishing <br> Tahun: 2020',
+            imageUrl: 'https://static.lontara.app/2730e1c3-0cfd-4d11-8729-5ac79ac45b17.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://lontara.app/books/5e61cfd5dd81141e6b34da67"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+      </script>
+      
+      <!-- Jquery and Js Plugins -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/jquery-2.1.1.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/jquery.validate.min.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/bootstrap.min.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/plugins.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/validator.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/custom.js') }}">
+</script>
+
+
+</body>
+</html>

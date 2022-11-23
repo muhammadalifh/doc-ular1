@@ -375,6 +375,10 @@ def marah():
 def senang():
     return render_template('senang.html')
 
+@app.route('/sedih')
+def sedih():
+    return render_template('sedih.html')
+
 @app.route('/after', methods=['GET', 'POST'])
 def after():
     img = request.files['file1']
