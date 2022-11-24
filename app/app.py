@@ -422,7 +422,7 @@ def after():
 
     image = np.reshape(image, (1,48,48,1))
 
-    model = load_model('model-acc-60.h5')
+    model = load_model('cnn_best1.h5')
 
     prediction = model.predict(image)
 
