@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Malas</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Icon -->
+	<link rel="shortcut icon"
+    href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700%7CRoboto:300,400,500%7CMuli:300,400"
+    rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/bootstrap.min.css') }}
+        type="text/css" media="all">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/animate.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/owl.carousel.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/owl.theme.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/magnific-popup.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/ionicons.min.css') }}
+        type="text/css">
+    <link rel="stylesheet"
+        href={{ url_for('static', filename='/css/style.css') }}
+        type="text/css" media="all">
+
+</head>
+<body>
+
+<div class="wrapper">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bukuku </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a class="page-scroll" href="#main">Home</a></li>
+                    <li><a class="page-scroll" href="#features">Features</a></li>
+                    <li><a class="page-scroll" href="#reviews">Reviews</a></li>
+                    <li><a class="page-scroll" href="#buy">Pricing</a></li>
+                    <li><a class="page-scroll" href="#kelompok">Kelompok</a></li>
+                    <li><a href="#buy" class="btn btn-nav page-scroll wow fadeInDown"
+                            data-wow-delay="0.3s"><span>Buy Now</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><!-- /.navbar-collapse -->
+</div>
+
+
+    <style>
+        :root {
+            --columns: 3;
+            --yellow: rgba(238, 188, 31, 1);
+            --pink: rgba(255, 82, 145, 1);
+            --blue: rgba(64, 98, 187, 1);
+            --green: rgba(6, 141, 126, 1);
+            --white: rgba(248, 255, 229, 1);
+          }
+          
+
+          
+          .unordered{
+            display:grid;
+            grid-template-columns: repeat(var(--columns),1fr);
+            margin: 200px -40px;
+          }
+          
+          .list{
+            grid-column-end: span 2;
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            margin-top: -50%;
+          }
+          
+          .list:nth-child(2n){
+            grid-column-start:2;
+          }
+          
+          .list::before, .list::after {
+            content:'';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: 50% 100%,50% 100%;
+            background-position: left, right;
+          }
+          
+          .list::before{
+            z-index: -10;
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            background-repeat: no-repeat;
+            background-image: linear-gradient(-45deg,var(--yellow) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--yellow) 60%), linear-gradient(45deg,var(--yellow) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--yellow) 60%);
+          }
+          
+          .list::after{
+            clip-path: polygon(100% 50%, 50% 100%, 0 50%, 20% 50%, 50% 80%,80% 50%);
+            -webkit-clip-path: polygon(100% 50%, 50% 100%, 0 50%, 20% 50%, 50% 80%,80% 50%);
+            background-repeat: no-repeat;
+            background-image: linear-gradient(45deg,var(--yellow) 40%,var(--green) 40%), linear-gradient(-45deg,var(--yellow) 40%,var(--green) 40%);
+          }
+          
+          .list:nth-child(2n)::before{
+            background-image: linear-gradient(-45deg,var(--pink) 53.5%,var(--blue) 53.5%,var(--blue) 60%,var(--pink) 60%), linear-gradient(45deg,var(--pink) 53.5%,var(--blue) 53.5%,var(--blue) 60%,var(--pink) 60%);
+          }
+          
+          .list:nth-child(2n)::after{
+            background-image: linear-gradient(45deg,var(--pink) 40%,var(--blue) 40%), linear-gradient(-45deg,var(--pink) 40%,var(--blue) 40%);
+          }
+          
+          .list:nth-child(5n)::before{
+            background-image: linear-gradient(-45deg,var(--green) 53.5%,var(--pink) 53.5%,var(--pink) 60%,var(--green) 60%), linear-gradient(45deg,var(--green) 53.5%,var(--pink) 53.5%,var(--pink) 60%,var(--green) 60%);
+          }
+          
+          .list:nth-child(5n)::after{
+            background-image: linear-gradient(45deg,var(--green) 40%,var(--pink) 40%), linear-gradient(-45deg,var(--green) 40%,var(--pink) 40%);
+          }
+          
+          .list:nth-child(7n)::before,.list:nth-child(7n-4)::before{
+            background-image: linear-gradient(-45deg,var(--blue) 53.5%,var(--white) 53.5%,var(--white) 60%,var(--blue) 60%), linear-gradient(45deg,var(--blue) 53.5%,var(--white) 53.5%,var(--white) 60%,var(--blue) 60%);
+          }
+          
+          .list:nth-child(7n)::after,.list:nth-child(7n-4)::after{
+            background-image: linear-gradient(45deg,var(--blue) 40%,var(--white) 40%), linear-gradient(-45deg,var(--blue) 40%,var(--white) 40%);
+          }
+          
+          .list:nth-child(9n)::before,.list:nth-child(9n-5)::before{
+            background-image: linear-gradient(-45deg,var(--white) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--white) 60%), linear-gradient(45deg,var(--white) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--white) 60%);
+          }
+          
+          .list:nth-child(9n)::after,.list:nth-child(9n-5)::after{
+            background-image: linear-gradient(45deg,var(--white) 40%,var(--green) 40%), linear-gradient(-45deg,var(--white) 40%,var(--green) 40%);
+          }
+          
+          .image{
+            position: absolute;
+            width: 43%;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-60%);
+            box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
+            transition-property: transform;
+            transition-duration: .3s;
+          }
+          
+          .image:hover{
+            transform: translateX(-40%) translateY(-70%) rotatez(25deg);
+          }
+          @media (min-width:450px){
+            .unordered{
+              margin: 190px 40px;
+            }
+          }
+          @media (min-width:600px){
+            :root {
+              --columns: 5;
+            }
+            .list:nth-child(2n){
+              grid-column-start:auto;
+            }
+            .list:nth-child(4n-1){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:900px){
+            :root {
+              --columns: 7;
+            }
+            .list:nth-child(4n-1){
+              grid-column-start:auto;
+            }
+            .list:nth-child(6n-2){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:1200px){
+            :root {
+              --columns: 9;
+            }
+            .list:nth-child(6n-2){
+              grid-column-start:auto;
+            }
+            .list:nth-child(8n-3){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:1500px){
+            :root {
+              --columns: 11;
+            }
+            .list:nth-child(8n-3){
+              grid-column-start:auto;
+            }
+            .list:nth-child(10n-4){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:1800px){
+            :root {
+              --columns: 13;
+            }
+            .list:nth-child(10n-4){
+              grid-column-start:auto;
+            }
+            .list:nth-child(12n-5){
+              grid-column-start:2;
+            }
+          }
+          @media (min-width:2100px){
+            :root {
+              --columns: 15;
+            }
+            .list:nth-child(12n-5){
+              grid-column-start:auto;
+            }
+            .list:nth-child(14n-6){
+              grid-column-start:2;
+            }
+          }
+          
+          
+          
+    </style>
+
+    <br><br><br><br>
+
+    <center>
+        <h1>Buku Dengan Prediksi Malas</h1>
+    </center>
+
+    <ul class="unordered">
+        <li class="list" id="list1"> 
+            <a target="_blank" href="https://www.bukukita.com/Buku-Novel/Fiksi/169050-Tenggelamnya-Kapal-Van-der-Wijck.html">
+                <img class="image" src="{{ url_for('static', filename='/malas/ML-001.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list2"> 
+            <a target="_blank" href="https://www.bukukita.com/Buku-Novel/Fiksi/169050-Tenggelamnya-Kapal-Van-der-Wijck.html">
+                <img class="image" src="{{ url_for('static', filename='/malas/ML-002.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list3"> 
+            <a target="_blank" href="https://www.gramedia.com/products/blink-cover-baru-isbn-lama">
+                <img class="image" src="{{ url_for('static', filename='/malas/ML-003.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list4"> 
+            <a target="_blank" href="https://www.gramedia.com/products/kosmos">
+                <img class="image" src="{{ url_for('static', filename='/malas/ML-004.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list5"> 
+            <a target="_blank" href="https://www.gramedia.com/products/upheaval">
+                <img class="image" src="{{ url_for('static', filename='/malas/ML-005.jpg') }}" alt="">
+            </a>
+        </li>
+        <li class="list" id="list6"> 
+          <a target="_blank" href="https://www.gramedia.com/products/kenzo">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-006.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list7"> 
+          <a target="_blank" href="https://www.gramedia.com/products/twivortiare-cover-baru-2018">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-007.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list8"> 
+          <a target="_blank" href="https://www.bukukita.com/Buku-Novel/Politik-Hukum/160966-Lelaki-Di-Tengah-Hujan.htm">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-008.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list9"> 
+          <a target="_blank" href="https://www.bukukita.com/Sejarah-dan-Budaya/Sejarah-Dunia/147086-Jenghis-Khan-:-Legenda-Sang-Penakluk-dari-Mongolia.html">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-009.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list10"> 
+          <a target="_blank" href="https://www.bukukita.com/Buku-Novel/Sastra/169444-Pelukis-di-Atas-Awan.html">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-010.JPG') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list11"> 
+          <a target="_blank" href="https://www.bukukita.com/Buku-Novel/Remaja/162587-Selestia-dan-Penjara-Teka-teki.html">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-011.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list12"> 
+          <a target="_blank" href="https://www.perpus.org/bisnis-dan-ekonomi/kebelet-kaya-by-mardigu-wp#img-3">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-012.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list13"> 
+          <a target="_blank" href="https://www.gramedia.com/products/loneliness-is-my-best-firend">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-013.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list14"> 
+          <a target="_blank" href="https://www.gramedia.com/products/ego-is-the-enemy">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-014.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list15"> 
+          <a target="_blank" href="https://www.gramedia.com/products/sherlock-lupin-dan-aku-6-cover-baru-bayang-bayang-sunga">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-015.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list16"> 
+          <a target="_blank" href="https://www.gramedia.com/products/menari-bersama-bayang-bayang">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-016.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list17"> 
+          <a target="_blank" href="https://www.gramedia.com/products/hidup-adalah-solusi-segala-bentuk-kehidupan-memiliki-jalan-keluarnya">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-017.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list18"> 
+          <a target="_blank" href="https://www.gramedia.com/products/yesterday-afternoon-boy-anak-kemaren-sore">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-018.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list19"> 
+          <a target="_blank" href="https://www.gramedia.com/products/serangkai?queryID=76699f2aaf9bd4b88bd79b8b2b666638">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-019.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list20"> 
+          <a target="_blank" href="https://www.gramedia.com/products/gramedia-mega-impian-demian">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-020.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list21"> 
+          <a target="_blank" href="https://www.gramedia.com/products/game-of-hearts-love-in-vegas">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-021.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list22"> 
+          <a target="_blank" href="https://www.gramedia.com/products/blue-romance">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-022.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list23"> 
+          <a target="_blank" href="https://www.gramedia.com/products/akasha-record-of-ragnarok-7">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-023.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list24"> 
+          <a target="_blank" href="https://www.gramedia.com/products/atomic-habits-perubahan-kecil-yang-memberikan-hasil-luar-bi">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-024.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list25"> 
+          <a target="_blank" href="https://www.gramedia.com/products/generasi-micin-vs-kevin">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-025.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list26"> 
+          <a target="_blank" href="https://www.gramedia.com/products/happiness-1?queryID=b59ba011c0758f934c6d0d733d8a7b65">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-026.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list27"> 
+          <a target="_blank" href="https://www.gramedia.com/products/the-lord-of-the-rings-kembalinya-sang-raja-the-return-of-the-king">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-027.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list28"> 
+          <a target="_blank" href="https://www.gramedia.com/products/seperti-hujan-yang-jatuh-ke-bumi">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-028.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list29"> 
+          <a target="_blank" href="https://www.gramedia.com/products/underground">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-029.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list30"> 
+          <a target="_blank" href="https://www.gramedia.com/products/happy-everyday?queryID=06b3f1b9e00a899e20d2c3262ba39bc6">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-030.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list31"> 
+          <a target="_blank" href="https://www.gramedia.com/products/fight-for-happiness">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-031.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list32"> 
+          <a target="_blank" href="https://www.gramedia.com/products/five-nights-at-freddys">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-032.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list33"> 
+          <a target="_blank" href="https://www.gramedia.com/products/novel-eat-drink-sleep">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-033.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list34"> 
+          <a target="_blank" href="https://www.gramedia.com/products/untukmu-imamku">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-034.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list35"> 
+          <a target="_blank" href="https://www.gramedia.com/products/must-be-a-happy-ending-1?queryID=5186f38101254f037efc8211c34e3f45">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-035.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list36"> 
+          <a target="_blank" href="https://www.gramedia.com/products/conf-the-happy-prince?queryID=62263b219f3f85b9bc33698cff0db663">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-036.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list37"> 
+          <a target="_blank" href="https://www.gramedia.com/products/travel-easy-travel-happy?queryID=9e09bd24da68478d61611c14c620c381">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-037.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list38"> 
+          <a target="_blank" href="https://www.gramedia.com/products/lima-sekawan-rahasia-di-pulau-kirrin">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-038.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list39"> 
+          <a target="_blank" href="https://www.gramedia.com/products/how-to-read-human-nature-sukses-memahami-sifat-sifat-manusia">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-039.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list40"> 
+          <a target="_blank" href="https://www.gramedia.com/products/a-couple-of-cuckoos-05">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-040.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list41"> 
+          <a target="_blank" href="https://www.gramedia.com/products/preman-sekolah">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-041.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list42"> 
+          <a target="_blank" href="https://www.gramedia.com/products/buku-stop-overthinking-lebih-happy-jalani-hidup-dengan-tidak-berpikir-berlebihan?queryID=4e2d66f6f3c7fa53d4a9ab2c9733d741">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-042.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list43"> 
+          <a target="_blank" href="https://www.gramedia.com/products/think-again-kekuatan-mengetahui-apa-yang-tidak-diketahui">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-043.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list44"> 
+          <a target="_blank" href="https://www.gramedia.com/products/happiness-battle?queryID=4e2d66f6f3c7fa53d4a9ab2c9733d741">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-044.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list45"> 
+          <a target="_blank" href="https://www.gramedia.com/products/conf-english-classics-the-happy-prince-and-other-tales?queryID=869bb71a38276d5356f5cd3785933562tps://www.google.co.id/books/edition/Meditation_for_Angry_People/Eyw3CgAAQBAJ?hl=id&gbpv=1">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-045.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list46"> 
+          <a target="_blank" href="https://www.gramedia.com/products/conf-happy-book-for-happy-parent?queryID=23a31d2eb56a2ce5aadce6f8dc6e6077">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-046.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list47"> 
+          <a target="_blank" href="https://www.gramedia.com/products/conf-happiness-laboratory-meramu-kebahagiaan-hakiki?queryID=23a31d2eb56a2ce5aadce6f8dc6e6077">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-047.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list48"> 
+          <a target="_blank" href="https://www.gramedia.com/products/days-of-happiness?queryID=28ad0b1b87fc2b811f79a83d5b97dd43">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-048.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list49"> 
+          <a target="_blank" href="https://www.gramedia.com/products/happy-lucky-traveler-kehidupan-adalah-perjalanan?queryID=bad41df4cd488a40fa23435cc4e77a3d">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-049.jpg') }}" alt="">
+          </a>
+        </li>
+        <li class="list" id="list50"> 
+          <a target="_blank" href="https://www.gramedia.com/products/conf-the-happiness-project-proyek-kebahagiaan?queryID=17929e7b195f6c254b22b7d1d082a461">
+              <img class="image" src="{{ url_for('static', filename='/malas/ML-050.jpg') }}" alt="">
+          </a>
+        </li>
+      </ul>
+
+      <style>
+        .custom-btn {
+          width: 130px;
+          height: 40px;
+          color: #fff;
+          border-radius: 5px;
+          padding: 10px 25px;
+          font-family: 'Lato', sans-serif;
+          font-weight: 500;
+          background: transparent;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          display: inline-block;
+          box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+          7px 7px 20px 0px rgba(0,0,0,.1),
+          4px 4px 5px 0px rgba(0,0,0,.1);
+          outline: none;
+        }
+        
+        /* 1 */
+        .btn-1 {
+          background: rgb(6,14,131);
+          background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+          border: none;
+        }
+        .btn-1:hover {
+        background: rgb(0,3,255);
+        background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+        }
+      </style>
+
+      <button type="button" name="list" id="list">Button</button>
+
+      <script>
+        $('#list1').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Demi Pencitraan (Sex And Vanity)',
+            html: 'Penulis: Kevin Kwan <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/Sex_Vanity_cov_1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/demi-pencitraan-sex-and-vanity"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list2').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Pendidikan Yang Berkebudayaan',
+            html: 'Penulis:  Yudi Latif  <br> Publishher: Gramedia <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020647197_Pendidikan_yang_berkebudayaan_C_1_4-1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/pendidikan-yang-berkebudayaan"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list3').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Jendral Jevano',
+            html: 'Penulis:  Amanda Audria  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786235953168-jendral_jevano.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/jendral-jevano"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list4').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Pangerang Tak Berharap Mahkota',
+            html: 'Penulis:  Kh.Andrian Mafatihallah Kariem,M.A  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/cover-depan-pangeran-tak-berharap-mahkota-1-600x919.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/pangerang-tak-berharap-mahkota"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list5').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Success Habits',
+            html: 'Penulis:  Napoleon Hill  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/SUCCESS_HABITS_C_1_4_page-0001.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/success-habits"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list6').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: One Piece Yellow',
+            html: 'Penulis:  Eiichiro Oda  <br> Publishher: Gramedia <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020452081_One_Piece_Yellow_Grand_Elements.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/one-piece-yellow-grand-elements"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list7').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Final Fantasy Lost Stranger 07',
+            html: 'Penulis:  Hazuki Minase, Itsuki Kameya  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/final_fantasy_7_COV_Ina.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/final-fantasy-lost-stranger-07"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list8').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Museum Dan Kita',
+            html: 'Penulis:  Amanda Margareth  <br> Publishher: Gramedia <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786022203254_Museum-Dan-Kita.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/museum-dan-kita"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list9').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Rahasia Motivasi Diri',
+            html: 'Penulis:  Superival <br> Publishher: Gramedia <br> Tahun: 2014',
+            imageUrl: 'https://th.bing.com/th/id/OIP.zOQ0xGh1uZgnPY_5shCNdgHaKh?pid=ImgDet&rs=1',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/rahasia-motivasi-diri-1?queryID=72de3015d4c7cffcbf452720154ed5cc"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list10').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Sukses Itu Berani Bersikap Masa Bodo',
+            html: 'Penulis:  Denieda Fanun  <br> Publishher: Gramedia <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786025805813_sukses_itu_berani_bersikap_masa_bodo.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/sukses-itu-berani-masa-bodo-mengubah-risiko-kegagalan-deng?queryID=5de754e8d64a0d6db03847a5878969bc"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list11').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Terapi Berpikir Positif Mind Power Skills SC Ner Edition',
+            html: 'Penulis:  Ibrahim Elfiky  <br> Publishher: Gramedia <br> Tahun: 2016',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786022900733_Terapi-Berpikir-Positif-Mind-Power-Skills-SC-Ner-Edition.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/terapi-berpikir-positif-mind-power-skills-sc-ner-edition"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list12').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Motivasi Now',
+            html: 'Penulis:  Krishnamurti  <br> Publishher: Gramedia <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786025474422_Motivasi-Now.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/motivasi-now?queryID=ab31ebdae477451cb0281926cad82c65"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list13').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Jack Ma Manusia Triliun Yuan',
+            html: 'Penulis:  Gisa Naraya  <br> Publishher: Gramedia <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786026475282_9786026475282.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/jack-ma-manusia-triliun-yuan?queryID=ab31ebdae477451cb0281926cad82c65"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list14').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Berbenah Jadi Duit',
+            html: 'Penulis:  Yoon Sun - Hyun  <br> Publishher: Gramedia <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786024553890_BERBENAH-JADI-DUIT.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/berbenah-jadi-duit?queryID=e1997f45074d63ce41f8e670ef314ffa"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list15').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Jangan Mengeluh, Jadilah Tangguh',
+            html: 'Penulis:  Putri Sawwal  <br> Publishher: Gramedia <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786024071905_9786024071905.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/jangan-mengeluh-jadilah-tangguh?queryID=0aa63b2c5c9090f6c99ae50af8720ed7"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list16').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Seni Memotivasi Diri',
+            html: 'Penulis:  Brian Tracy Dan Strutzel  <br> Publishher: Gramedia <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786232162891_SENI-MEMOTIVA.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/seni-memotivasi-diri?queryID=2fd1346bc584169bc92732e353023285"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list17').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Terbanglah Raih Mimpimu',
+            html: 'Penulis:  Mario Febian  <br> Publishher: Gramedia <br> Tahun: 2015',
+            imageUrl: 'https://divapress-online.com/Files/cover_buku/978-602-7695-96-2.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/terbanglah-raih-mimpimu-tips2-menjadi-org-sukses?queryID=c34d0035e7d1fc38d05d41e3acdbcb34"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list18').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Sukses Menjadi Penyiar Radio',
+            html: 'Penulis:  Ega Wardana  <br> Publishher: Gramedia <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/67536/thumb_image_normal/BLK_SMPRPPPUPDR2021359814.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/sukses-menjadi-penyiar-radio-profesional-panduan-praktis-untuk-profesi-dunia-radio"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list19').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Perubahan Kecil Yang Memberikan Hasil Luar Biasa',
+            html: 'Penulis:  James Clear  <br> Publishher: Gramedia <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020633176_.Atomic_Habit.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/atomic-habits-perubahan-kecil-yang-memberikan-hasil-luar-bi"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list20').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Kiat Membangun Usaha Dari Nol, Tanpa Modal',
+            html: 'Penulis:  M. Pardamean  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/71346/thumb_image_normal/BLK_BUKMUDNTMBDHLB2022101986.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/berkebun-uang-kiat-membangun-usaha-dari-nol-tanpa-modal-besar-dengan-hasil-luar-biasa"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list21').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Wanita Luar Biasa, Perubahan Paradigma Terhadap Wanita Yang Dipandang Rendah',
+            html: 'Penulis:  Christine Sofia Dimu Here  <br> Publishher: Gramedia <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/68110/thumb_image_normal/BLK_WLBPPTWYDR2021892088.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/wanita-luar-biasa-perubahan-paradigma-terhadap-wanita-yang-dipandang-rendah"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list22').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Good Habits, Bad Habits',
+            html: 'Penulis:  Wendy Wood  <br> Publishher: Gramedia <br> Tahun: 2020',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/51899/thumb_image_normal/ID_GHBH2020MTH04GH.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/good-habits-bad-habits-cara-membentuk-kebiasaan-baik-untuk-menghasilkan-perubahan-positif-10"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list23').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Kunci Sukses Menjadi Aktor',
+            html: 'Penulis:  Elizabeth Lutters  <br> Publishher: Gramedia <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/img347.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/kunci-sukses-menjadi-aktor"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list24').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Raih Beasiswa Melalui Restu Ibu',
+            html: 'Penulis:  Bella Nuriyanti  <br> Publishher: Gramedia <br> Tahun: 2015',
+            imageUrl: 'https://www.belbuk.com/images/products/buku/psikologi--pengembangan-diri/inspirasi/57da7c887f3ae2.42069802l.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/raih-beasiswa-melalui-restu-ibu?queryID=51a47c68dbc49dddb3d28ea7c2dfe44d"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list25').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Sukses Raih Beasiswa Dalam Dan Luar Negeri',
+            html: 'Penulis:  Micha Gracianna Devi  <br> Publishher: Gramedia <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/images/1/43558/image_highres/ID_BDL2018MTH08BDL.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/sukses-raih-beasiswa-dalam-dan-luar-negri"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list26').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Mimpi Itu Gratis',
+            html: 'Penulis:  Ayusha  <br> Publishher: Gramedia <br> Tahun: 2016',
+            imageUrl: 'https://cdn.gramedia.com/uploads/images/1/34479/big_covers/ID_BHIP2016MTH09MIGR_B.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/mimpi-itu-gratis?queryID=51a47c68dbc49dddb3d28ea7c2dfe44d"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list27').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Hidup Sukses Dengan Lima Jari Edisi Terbaru',
+            html: 'Penulis:  Agun Gunandjar Sudarsa  <br> Publishher: Gramedia <br> Tahun: 2021',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/Hidup_Sukses_Dengan_Lima_Jari_Edisi_Terbaru.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/hidup-sukses-dengan-lima-jari-edisi-terbaru?queryID=362247fe0cb298584268dd3f7ef6961f"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list28').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Success Through Mindset, Sukses Melalui Pola Pikir',
+            html: 'Penulis:  Sten Morgan  <br> Publisher: Gramedia <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9789792972160_Success-Through-Mindset-Sukses-Melalui-Pola-Pikir.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/success-through-mindset-sukses-melalui-pola-pikir?queryID=3b0de34f7e44e7bff424f2fa0a720930"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list29').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: The Happiness Mindset',
+            html: 'Penulis:  Muchlis Anwar  <br> Publishher: Gramedia <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786023411207_the-happiness-mindset.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/the-happiness-mindset?queryID=8915e03db6c95b916cdc17521b2109ca"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list30').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Ubah Khayalanmu Jadi Tindakan',
+            html: 'Penulis:  Sha Wasmund & Richard Newton  <br> Publishher: Gramedia <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020336381_stop-talking-start-doing_enam-langkah-untuk-memulai-tindakan.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/stop-talking-start-doing-enam-langkah-untuk-memulai-tindakan?queryID=51a47c68dbc49dddb3d28ea7c2dfe44d"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list31').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: 10 Ways To Stay Positive',
+            html: 'Penulis:  Alviana Cahyanti  <br> Publishher: Gramedia <br> Tahun: 2017',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786025448034_9786025448034.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/10-ways-to-stay-positive?queryID=2df9f16b63fdd2d392563fba2a137fa2"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list32').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Mimpi, Cinta Dan Inspirasi',
+            html: 'Penulis:  Gloria Morgen  <br> Publishher: Gramedia <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786024835972_novel-Mimpi-C.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/mimpi-cinta-dan-inspirasi?queryID=b94450a4ad02bdf7c6aec0c3b341b066"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list33').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: High Rise Invasion 13',
+            html: 'Penulis:  Tsuina Miura  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/cov_HIGH-RISE_INVASION_13.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/high-rise-invasion-13"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list34').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Detektif Conan 100',
+            html: 'Penulis:  Aoyama Gosho  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/722010275_Cov_Conan_100_1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/detektif-conan-100"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list35').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Sesuk',
+            html: 'Penulis:  Tere Liye <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/sesuk.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/sesuk"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list36').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Imaji',
+            html: 'Penulis:  Discaria Paladinteri  <br> Publishher: Gramedia <br> Tahun: 2018',
+            imageUrl: 'https://cdn.gramedia.com/uploads/images/1/3506/big_covers/ID_GPU2013MTH04IMAJI_B.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/imaji"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list37').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Dinosaurus Baru Nobita Si Kembar Kyu Dan Myu',
+            html: 'Penulis:  Fujiko  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/722010401_Doraemon_Movie_Myu_Kyu.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/doraemon-movie-dinosaurus-baru-nobita-si-kembar-kyu-dan-myu-bonus-stiker"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list38').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Why? Amazon',
+            html: 'Penulis:  Yearim Dang  <br> Publishher: Gramedia <br> Tahun: 2019',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020486406_WHY_Amazon_co.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/why-amazon"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list39').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Angkot Tua Rpl',
+            html: 'Penulis:  Sausan Apsarini  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786023679546-angkot_tua.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/komik-next-g-angkot-tua-rpl"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list40').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: The Promised Neverland Surat Dari Norman',
+            html: 'Penulis:  Kaiu Shirai, Posuka Demizu  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786230035180_cover_LN_TPN_Surat_dari_Norman.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/ln-the-promised-neverland-surat-dari-norman"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list41').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Countdwon To Heaven',
+            html: 'Penulis:  Gosho Aoyama, Shima Mizuki, Kazunari  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/722010615_cover_LN_Detektif_Conan_Countdown_to_Heaven.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/light-novel-detektif-conan-countdown-to-heaven"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list42').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Dr. Stone 01',
+            html: 'Penulis:  Riichiro Inagaki  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/Dr_Stone_1_1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/dr-stone-01"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list43').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Wild Police Story-First',
+            html: 'Penulis:  AAoyama Gosho, Takahiro Arai  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/722010486_cover_Wild_Police_Story_First.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/wild-police-story-first"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list44').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Bungo Stray Dogs',
+            html: 'Penulis:  Kafka Asagiri  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/Bungo_Stray_Dogs_01.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/lc-bungo-stray-dogs-01"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list45').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: The Irregular At Magic High School ',
+            html: 'Penulis:  Tsutomo Sato  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/THE_IRREGULAR_MAGIC_HIGH_SCHOOL.jpeg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/the-irregular-at-magic-high-school-01"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list46').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Atelier Of Which Hat 01',
+            html: 'Penulis:  Kamome Shirahama  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786020458892_cover_cu_juli_2022_Atelier_of_Witch_Hat_1.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/atelier-of-witch-hat-01-1"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list47').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Fate / Apocrypha ',
+            html: 'Penulis:  Tetsuo Hara & Buronson <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/COV_FATE_APOCRYPHA.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/akasha-fateapocrypha-01"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list48').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: After The End 01',
+            html: 'Penulis:  Kanehito Yamada, Tsukasa Abe  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/FRIEREN_1_COV_Ina.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/frieren-after-the-end-01"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list49').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Mashle',
+            html: 'Penulis:  Hajime Komoto  <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/9786230035814_cover_Mashle_1_page-0001.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/mashle-01"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+        $('#list50').on('click', function(event){
+          event.preventDefault();
+          Swal.fire({
+            title: 'Judul: Si Pemenang Misterius',
+            html: 'Penulis: Xanseviera <br> Publishher: Gramedia <br> Tahun: 2022',
+            imageUrl: 'https://cdn.gramedia.com/uploads/items/COVER_KISAH_ZULAIKHA_7.jpg',
+            // imageWidth: 400,
+            imageHeight: 400,
+            footer: '<a target="_blank" href="https://www.gramedia.com/products/kisah-zulaikha-si-pemenang-misterius"><button class="custom-btn btn-1">Link</button></a>'
+          })
+        });
+      </script>
+      
+      <!-- Jquery and Js Plugins -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/jquery-2.1.1.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/jquery.validate.min.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/bootstrap.min.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/plugins.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/validator.js') }}">
+</script>
+<script type="text/javascript"
+    src="{{ url_for('static', filename='/js/custom.js') }}">
+</script>
+
+
+</body>
+</html>
