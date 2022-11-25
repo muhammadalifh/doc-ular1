@@ -204,7 +204,7 @@ body {
 	font-family: 'Nunito';
 	font-size: 21px;
 	font-weight: 700;
-	color: #41CD52;
+	color: #00c2cb;
 	letter-spacing: 0;
 	line-height: 1;
 	text-transform: none;
@@ -234,23 +234,23 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-  color: #41CD52;
+  color: #00c2cb;
 }
 
 .navbar-default .navbar-nav > .active > a {
   background: transparent;
-  color: #41CD52;
+  color: #00c2cb;
   }
 
 
 .navbar-default .navbar-nav > .active > a:hover {
     background: transparent;
-    color: #41CD52;
+    color: #00c2cb;
 }
 
 .navbar-default .navbar-nav > .active > a:focus {
 	background: transparent;
-  color: #41CD52;
+  color: #00c2cb;
 }
 
 .navbar-default .navbar-collapse {
@@ -275,7 +275,7 @@ body {
 }
 
 .navbar .btn-nav {
-  background: #41CD52;
+  background: #00c2cb;
   color: #FFFFFF;
   border-radius: 0.7rem;
 	box-shadow: 0 3px 10px rgba(65,205,82,.5);
@@ -296,7 +296,7 @@ body {
 
 
 .navbar .btn-nav:hover {
-  background: #41CD52 !important;
+  background: #00c2cb !important;
   color: #FFFFFF;
   border-color: #41CD52 !important;
 	box-shadow: 0 5px 10px rgba(65,205,82,.5);
@@ -339,12 +339,12 @@ body {
 	}
 
   .navbar-default .navbar-brand {
-    color: #41CD52;
+    color: #00c2cb;
 		padding: 15px 15px !important;
   }
 
   .navbar-default .navbar-toggle .icon-bar {
-    background-color: #41CD52;
+    background-color: #00c2cb;
   }
 
 	.navbar .btn-nav {
@@ -378,12 +378,12 @@ body {
 }
 
 .navbar-default.past-main .navbar-brand {
-	color: #41CD52;
+	color: #00c2cb;
 	padding: 15px;
 }
 
 .navbar-default.past-main .navbar-toggle .icon-bar {
-	background-color: #41CD52;
+	background-color: #00c2cb;
 }
 
 .navbar-default.past-main .navbar-nav > li > a {
@@ -393,23 +393,23 @@ body {
 }
 
 .navbar-default.past-main .navbar-nav > li > a:hover {
-  color: #41CD52;
+  color: #00c2cb;
 }
 
 .navbar-default.past-main .navbar-nav > .active > a {
   background: transparent;
-  color: #41CD52;
+  color: #00c2cb;
   }
 
 
 .navbar-default.past-main .navbar-nav > .active > a:hover {
     background: transparent;
-    color: #41CD52;
+    color: #00c2cb;
 }
 
 .navbar-default.past-main .navbar-nav > .active > a:focus {
 	background: transparent;
-  color: #41CD52;
+  color: #00c2cb;
 }
 
 .navbar-default.past-main .btn-nav {
@@ -497,7 +497,7 @@ body {
 	font-size: 42px;
 	font-weight: 400;
   letter-spacing: -1px;
-	color: #41CD52;
+	color: #00c2cb;
 }
 
 .hero .intro p {
@@ -553,7 +553,7 @@ body {
 
 .btn-action {
   padding: 0.5rem 1.5rem;
-	background: #41CD52;
+	background: #00c2cb;
 	border: 1px solid;
 	border-color: #41CD52;
   border-radius: .125rem;
@@ -566,19 +566,19 @@ body {
 
 .btn-action:hover {
 	color: #FFFFFF;
-	border-color: #41CD52;
-	background: #41CD52;
+	border-color: #00c2cb;
+	background: #00c2cb;
 	-webkit-transform: translateY(-2px);
 	-moz-transform: translateY(-2px);
 	transform: translateY(-2px);
 }
 
 .intro .btn-action {
-	background: #41CD52;
+	background: #00c2cb;
 }
 
 .intro .btn-action:hover {
-	background: #41CD52;
+	background: #00c2cb;
 }
 
 .btn-action span {
@@ -698,7 +698,7 @@ body {
 	padding-left: 7px;
   text-decoration: none;
   text-align: center;
-  color: #41CD52;
+  color: #00c2cb;
 	background: #FFFFFF;
   font-size: 34px;
   font-weight: normal;
@@ -1105,7 +1105,7 @@ body {
 }
 
 .pricing-v2 .intro a {
-	color: #41CD52;
+	color: #00c2cb;
 	text-decoration: none;
 }
 
@@ -1137,9 +1137,9 @@ body {
 
 
 .pricing-v2 .btn-action:focus {
-	background: #41CD52;
+	background: #00c2cb;
 	outline: none;
-	border-color: #41CD52;
+	border-color: #00c2cb;
 }
 
 
