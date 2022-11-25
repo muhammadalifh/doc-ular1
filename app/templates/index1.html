@@ -9,14 +9,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Root Multipurpose Landing Page Template">
 	<meta name="keywords" content="Root HTML Template, Root Landing Page, Landing Page Template">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen"
+		href={{ url_for('static', filename='/css/webcam-demo.css') }}>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script
+		src="{{ url_for('static', filename='/dist/webcam-easy.min.js') }}">
+	</script>
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700%7CRoboto:300,400,500%7CMuli:300,400"
 		rel="stylesheet">
 
 	<!-- Icon -->
-	<link rel="shortcut icon"
-		href="{{ url_for('static', filename='favicon.ico') }}">
+	<!-- <link rel="shortcut icon"
+		href="{{ url_for('static', filename='favicon.ico') }}"> -->
 
 	<!-- CSS -->
 	<link rel="stylesheet"
@@ -41,7 +50,6 @@
 		href={{ url_for('static', filename='/css/style.css') }}
 		type="text/css" media="all">
 
-	<script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
 	<!--<link rel="stylesheet" href={{ url_for('static', filename='/css/client_side.css') }}  type="text/css"> -->
 
 	<!-- JavaScript -->
@@ -88,8 +96,12 @@
 						<div class="col-md-5 col-sm-6">
 							<div class="intro">
 								<h1 class="wow fadeInDown" data-wow-delay="0.1s"><span>ReBook</span></h1>
-								<p class="wow fadeInDown" data-wow-delay="0.2s">ReBook (Rekomendasi Ebook & Buku) adalah sebuah aplikasi berbasis website yang dapat memberikan Rekomendasi Buku dan Ebook berdasarkan emosi wajah dari pengguna. Jenis buku yang direkomendasikan terdiri dari 6 jenis yaitu marah, bosan, malas, senang, sedih, dan terkejut.</p>
-								<a href="#" class="btn btn-action btn-fb wow fadeInDown" data-wow-delay="0.3s"><span>Lebih Lanjut </span></a>
+								<p class="wow fadeInDown" data-wow-delay="0.2s">ReBook (Rekomendasi Ebook & Buku) adalah
+									sebuah aplikasi berbasis website yang dapat memberikan Rekomendasi Buku dan Ebook
+									berdasarkan emosi wajah dari pengguna. Jenis buku yang direkomendasikan terdiri dari
+									6 jenis yaitu marah, bosan, malas, senang, sedih, dan terkejut.</p>
+								<a href="#" class="btn btn-action btn-fb wow fadeInDown"
+									data-wow-delay="0.3s"><span>Lebih Lanjut </span></a>
 							</div>
 						</div>
 						<div class="col-md-7 col-sm-6">
@@ -150,7 +162,7 @@
 
 
 
-			<div class="features">
+			<!-- <div class="features">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-6">
@@ -172,7 +184,159 @@
 						</div>
 					</div>
 				</div>
+			</div> -->
+
+			<div class="features">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="features-text wow fadeInDown">
+								<h2>Kami menyediakan layanan kamera untuk kebutuhan anda</h2>
+								<p>Foto emosi anda akan kami ambil dan kami akan mengolahnya menjadi sebuah buku
+									foto
+									berwarna yang dapat anda gunakan untuk mengingat kenangan anda. ntahlah susah mikir nanti di edit lagi yawww</p>
+								<button class="btn btn-primary btn-action" type="button"><span>Buy Now</span></button>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="features-image wow fadeInRight">
+								<main id="webcam-app">
+									<div class="form-control webcam-start" id="webcam-control">
+										<label class="form-switch">
+											<input type="checkbox" id="webcam-switch">
+											<i></i>
+											<span id="webcam-caption">Click to Start Camera</span>
+										</label>
+										<button id="cameraFlip" class="btn d-none"></button>
+									</div>
+
+									<div id="errorMsg" class="col-12 col-md-6 alert-danger d-none">
+										Fail to start camera, please allow permision to access camera. <br />
+										If you are browsing through social media built in browsers, you would need to
+										open the page in
+										Sarafi (iPhone)/ Chrome (Android)
+										<button id="closeError" class="btn btn-primary ml-3">OK</button>
+									</div>
+									<div class="md-modal md-effect-12">
+										<div id="app-panel" class="app-panel md-content row p-0 m-0">
+											<div id="webcam-container" class="webcam-container col-12 d-none p-0 m-0">
+												<video id="webcam" autoplay playsinline width="640"
+													height="480"></video>
+												<canvas id="canvas" class="d-none"></canvas>
+												<div class="flash"></div>
+												<audio id="snapSound"
+													src="{{ url_for('static', filename='/audio/snap.wav') }}"
+													preload="auto"></audio>
+											</div>
+											<div id="cameraControls" class="cameraControls">
+												<a href="#" id="exit-app" title="Exit App" class="d-none"><i
+														class="material-icons">exit_to_app</i></a>
+												<a href="#" id="take-photo" title="Take Photo"><i
+														class="material-icons">camera_alt</i></a>
+												<a href="#" id="download-photo" download="selfie.png" target="_blank"
+													title="Save Photo" class="d-none"><i
+														class="material-icons">file_download</i></a>
+												<a href="#" id="resume-camera" title="Resume Camera" class="d-none"><i
+														class="material-icons">camera_front</i></a>
+											</div>
+										</div>
+									</div>
+									<div class="md-overlay"></div>
+								</main>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
+
+
+
+			<style>
+				.input-file {
+					padding: 30px;
+					width: 300px;
+					margin: 0 auto;
+					background: #ffffff;
+					-webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.04);
+					box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0);
+				}
+
+				.upload-img {
+					border-radius: 100%;
+					display: inline-block;
+					width: 350px;
+					height: 350px;
+					object-fit: cover;
+					object-position: 50% 50%;
+					border: 3px solid #20e5bf;
+					margin-right: 15px;
+					vertical-align: middle;
+				}
+
+				.input-file-upload {
+					position: relative;
+					display: inline-block;
+					vertical-align: middle;
+				}
+
+				.input-file-upload input[type="file"] {
+					opacity: 0;
+					padding: 10px 0;
+					height: 36px;
+					width: 150px;
+				}
+
+				.upload-label {
+					width: 150px;
+					height: 36px;
+					background: #41CD52;
+					text-align: center;
+					color: #ffffff;
+					display: block;
+					padding: 8px 0;
+					position: absolute;
+					line-height: normal;
+					font-size: 14px;
+					font-weight: 700;
+					transition: all 0.3s ease-in-out;
+				}
+
+				.input-file-upload:hover .upload-label {
+					color: #FFFFFF;
+					border-color: #41CD52;
+					background: #41CD52;
+					-webkit-transform: translateY(-2px);
+					-moz-transform: translateY(-2px);
+					transform: translateY(-2px);
+				}
+
+				.submit {
+					font-family: 'Nunito', sans-serif;
+					border: none;
+					width: 150px;
+					height: 36px;
+					background: #41CD52;
+					text-align: center;
+					color: #ffffff;
+					display: block;
+					padding: 8px 0;
+					margin-left: 200px;
+					margin-top: -35.5px;
+					line-height: normal;
+					font-size: 14px;
+					font-weight: 700;
+					transition: all 0.3s ease-in-out;
+				}
+
+				.submit:hover {
+					color: #FFFFFF;
+					border-color: #41CD52;
+					background: #41CD52;
+					-webkit-transform: translateY(-2px);
+					-moz-transform: translateY(-2px);
+					transform: translateY(-2px);
+				}
+			</style>
 
 			<div class="features">
 				<div class="container">
@@ -190,41 +354,41 @@
 						</div>
 						<div class="col-sm-6">
 							<div class="features-image wow fadeInRight">
-								<video id="webcam" autoplay playsinlne width="800" height="600"></video>
-								<canvas id="canvas"></canvas>
-								<style>
-									#snap { 
-										padding: 10px;
-										background-color: aqua;
-										color: white;
-										text-decoration: none;
-									}
-								</style>
-								<a download id="snap" onclick="takePicture()">Snap</a>
-								<script>
-										const webCamElement = document.getElementById('webcam');
-										const canvasElement = document.getElementById('canvas');
-
-										const webcam = new Webcam(webCamElement, 'user', canvasElement);
-										webcam.start()
-											.then(result =>{
-												console.log("webcam started");
-											})
-											.catch(err => {
-												console.log(err);
-											});
-
-											function takePicture(){
-											let picture = webcam.snap();
-												document.querySelector('a').href = picture;
-											}
-								</script>
+								<form action="{{ url_for('after') }}" method='POST'
+									enctype='multipart/form-data'>
+									<div class="input-file">
+										<img id="file_upload"
+											src="{{ url_for('static',filename = 'images/insert_photo_here.jpg') }}"
+											alt="Input Image" class="upload-img" />
+										<div class="input-file-upload"> <br> <br>
+											<span class="upload-label" style="font-family: Nunito;">Upload Image</span>
+											<input type='file' name="file1" onchange="readURL(this);" />
+										</div>
+										<input class="submit" style="position: relative;" type="submit"
+											style="font-family: Nunito;" name="btn">
+									</div>
+									<!-- <input type="file" name='file1'> -->
+									<!-- <input class="upload-label" type="submit" name="btn"> -->
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
+			<script>
+				function readURL(input) {
+					if (input.files && input.files[0]) {
+						var reader = new FileReader();
+
+						reader.onload = function (e) {
+							$('#file_upload')
+								.attr('src', e.target.result);
+						};
+						reader.readAsDataURL(input.files[0]);
+					}
+				}
+			</script>
 
 			<div id="reviews" class="review-section">
 				<div class="container">
@@ -430,7 +594,7 @@
 							</div>
 						</div>
 						<script>
-							window.addEventListener('DOMContentLoaded',(event) => {
+							window.addEventListener('DOMContentLoaded', (event) => {
 								document.querySelector('.yearJS').innerHTML = new Date().getFullYear();
 							})
 						</script>
@@ -458,6 +622,9 @@
 	<!-- Jquery and Js Plugins -->
 	<script type="text/javascript"
 		src="{{ url_for('static', filename='/js/jquery-2.1.1.js') }}">
+	</script>
+	<script type="text/javascript"
+		src="{{ url_for('static', filename='/js/app.js') }}">
 	</script>
 	<script type="text/javascript"
 		src="{{ url_for('static', filename='/js/jquery.validate.min.js') }}">
