@@ -78,8 +78,9 @@
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li><a class="page-scroll" href="#main">Home</a></li>
-						<li><a class="page-scroll" href="#features">Features</a></li>
-						<li><a class="page-scroll" href="#reviews">Reviews</a></li>
+						<li><a class="page-scroll" href="#features">Ambil Gambar</a></li>
+						<li><a class="page-scroll" href="#features2">Upload Gambar</a></li>
+						<!--<li><a class="page-scroll" href="#reviews">Reviews</a></li> -->
 						<!-- <li><a class="page-scroll" href="#buy">Pricing</a></li> -->
 						<li><a class="page-scroll" href="#kelompok">Kelompok</a></li>
 						<li><a href="#buy" class="btn btn-nav page-scroll wow fadeInDown"
@@ -110,7 +111,7 @@
 						</div>
 					</div>
 				</div>
-			</div><!-- Pi-Hero -->
+			</div><!-- Pi-Hero --> <br> <br> <br> <br>
 
 			<!-- <div class="flex-split" id="features">
 				<div class="f-left">
@@ -186,7 +187,7 @@
 				</div>
 			</div> -->
 
-			<div class="features">
+			<div id="features" class="features">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-6">
@@ -340,18 +341,18 @@
 				}
 			</style>
 
-			<div class="features">
+			<div id="features2" class="features2">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-6">
-							<div class="features-text wow fadeInDown">
+							<div class="features2-text wow fadeInDown">
 								<h2>Upload gambar emosi wajahmu disini</h2>
 								<p>Untuk mendapatkan rekomendasi buku yang sesuai, harap inputkan gambarmu disini (tetap tenang karena inputan gambar tidak akan masuk ke sistem)</p>
 								<button class="btn btn-primary btn-action" type="button"><span>Lebih Lanjut</span></button>
 							</div>
 						</div>
 						<div class="col-sm-6">
-							<div class="features-image wow fadeInRight">
+							<div class="features2-image wow fadeInRight">
 								<form action="{{ url_for('after') }}" method='POST'
 									enctype='multipart/form-data'>
 									<div class="input-file">
@@ -388,7 +389,7 @@
 				}
 			</script>
 
-			<div id="reviews" class="review-section">
+			<!--<div id="reviews" class="review-section">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-8 col-sm-offset-2">
@@ -443,7 +444,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 
 			<!-- <div class="pitch-2">
@@ -501,8 +502,8 @@
 							<div class="box-inner">
 								<div class="box-icon">
 									<img alt="Feature"
-										src="{{ url_for('static',filename = 'icons/1.png') }}"
-										width="45"></img>
+										src="{{ url_for('static',filename = 'icons/icons8-backend-100.png') }}"
+										width="100"></img>
 								</div>
 								<div class="box-info">
 									<h1>Muhammad Alif Hidayatullah</h1>
@@ -518,8 +519,8 @@
 							<div class="box-inner">
 								<div class="box-icon">
 									<img alt="Feature"
-										src="{{ url_for('static',filename = 'icons/2.png') }}"
-										width="45"></img>
+									src="{{ url_for('static',filename = 'icons/icons8-ui-design-100.png') }}"
+									width="100"></img>
 
 								</div>
 								<div class="box-info">
@@ -536,8 +537,8 @@
 							<div class="box-inner">
 								<div class="box-icon">
 									<img alt="Feature"
-										src="{{ url_for('static',filename = 'icons/3.png') }}"
-										width="45"></img>
+										src="{{ url_for('static',filename = 'icons/icons8-ux-design-100.png') }}"
+										width="100"></img>
 
 								</div>
 								<div class="box-info">
@@ -549,13 +550,13 @@
 								</div>
 							</div>
 						</div>
-
+						
 						<div class="col-md-3 col-sm-4 wow fadeInDown">
 							<div class="box-inner">
 								<div class="box-icon">
 									<img alt="Feature"
-										src="{{ url_for('static',filename = 'icons/4.png') }}"
-										width="45"></img>
+									src="{{ url_for('static',filename = 'icons/icons8-front-end-100.png') }}"
+									width="100"></img>
 
 								</div>
 								<div class="box-info">

@@ -844,7 +844,7 @@ body {
 
 .features-boxed .box-inner .box-info p {
 	font-family: 'Roboto';
-	font-size: 14px;
+	font-size: 12px;
 	line-height: 1.6;
 	color: #A1A1A1;
 }
@@ -868,7 +868,7 @@ body {
 
 
 .features {
-	background: #FFFFFF;
+	background: #F3F3F3;
 	padding: 100px 0 50px 0;
 }
 
@@ -888,6 +888,137 @@ body {
 }
 
 .features-text p {
+	font-family: 'Nunito';
+	font-size: 14px;
+	line-height: 1.4;
+	color: #A1A1A1;
+}
+
+/*-----------------------------------------------------------------
+--------------- Features Boxed Section Stying Starts --------------
+-----------------------------------------------------------------*/
+
+.features2-boxed {
+	padding: 50px 0 100px 0;
+	background: #F3F3F3;
+}
+
+.features2-boxed .boxed-intro {
+	padding: 50px 0 50px 15px;
+	overflow: hidden;
+}
+
+.features2-boxed .boxed-intro h4 {
+	font-family: 'Roboto';
+	font-size: 16px;
+	font-weight: 400;
+	color: #848484;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+
+.features2-boxed .boxed-intro h1 {
+	font-family: 'Roboto';
+	font-size: 36px;
+	font-weight: 300;
+	color: #404040;
+}
+
+.features2-boxed .boxed-intro p {
+	font-family: 'Roboto';
+	font-size: 16px;
+	font-weight: 300;
+	color: #848484;
+	line-height: 1.4;
+	margin: 20px 0 20px 0;
+}
+
+.features2-boxed .box-inner {
+	padding: 30px 30px 30px 30px;
+	margin-bottom: 30px;
+	background: #FFFFFF;
+	min-height: 300px;
+	border-radius: 2px;
+	-webkit-transition: box-shadow .3s ease-in-out;
+	-moz-transition:box-shadow .3s ease-in-out;
+	-ms-transition:box-shadow .3s ease-in-out;
+	-o-transition:box-shadow .3s ease-in-out;
+	transition:box-shadow .3s ease-in-out;
+}
+
+.features2-boxed .box-inner:hover {
+	cursor: pointer;
+	box-shadow:0 5px 10px rgba(0,0,0,.15);
+
+}
+
+.features2-boxed .box-inner .box-icon {
+	padding: 0 0 30px 0;
+}
+
+.features2-boxed .box-inner .box-icon i {
+	font-size: 34px;
+	color: #448AFF;
+}
+
+.features2-boxed .box-inner .box-info {
+	padding: 0 0 20px 0;
+}
+
+.features2-boxed .box-inner .box-info h1 {
+	font-family: 'Roboto';
+	font-size: 24px;
+	font-weight: 400;
+	color: #343434;
+	margin: 0 0 20px 0;
+}
+
+.features2-boxed .box-inner .box-info p {
+	font-family: 'Roboto';
+	font-size: 14px;
+	line-height: 1.6;
+	color: #A1A1A1;
+}
+
+.features2-boxed .box-inner .box-arrow {
+	position: absolute;
+	right: 15%;
+	bottom: 12%;
+}
+
+.features2-boxed .box-inner .box-arrow i {
+	font-size: 32px;
+	color: #448AFF;
+}
+
+
+
+/*--------------------------------------------------------------
+----------------- Features2 Section Stying Starts ---------------
+--------------------------------------------------------------*/
+
+
+.features2 {
+	background: #FFFFFF;
+	padding: 100px 0 50px 0;
+}
+
+.features2-text {
+	padding: 0 0 0 0;
+	max-width: 500px;
+	overflow: hidden;
+}
+
+.features2-text h2 {
+	font-family: 'Roboto';
+	font-size: 28px;
+	color: #222222;
+	font-weight: 300;
+	line-height: 1.2;
+	margin: 0 0 20px 0;
+}
+
+.features2-text p {
 	font-family: 'Nunito';
 	font-size: 14px;
 	line-height: 1.4;
@@ -1714,6 +1845,9 @@ body {
 	.features {
 		padding: 100px 0 100px 0;
 	}
+	.features2 {
+		padding: 100px 0 100px 0;
+	}
 
 	.flex-split {
 		-webkit-flex-direction: row;
@@ -1739,6 +1873,14 @@ body {
 	.features-text p {
 		font-size: 16px;
 	}
+
+	.features2-text h2 {
+		font-size: 34px;
+		}
+	
+		.features2-text p {
+			font-size: 16px;
+		}
 
 	.cta-2-inner h1 {
 		font-size: 34px;
@@ -1835,6 +1977,10 @@ body {
 @media only screen and (min-width: 1024px) {
 
 	.features-text {
+		padding: 100px 0 0 0;
+	}
+
+	.features2-text {
 		padding: 100px 0 0 0;
 	}
 
