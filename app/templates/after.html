@@ -4,14 +4,332 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hasil Prediksi</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <img src="{{url_for('static', filename='hasil/after.jpg')}}" alt="image" height=52% width = 50%>
+    <!-- <img src="{{url_for('static', filename='hasil/after.jpg')}}" alt="image" height=52% width = 50%> -->
 
     <br>
 
-    <h1>Hasilnya : {{data}}</h1>
+    <!-- <h1>Hasilnya : {{data}}</h1> -->
+
+    <script>
+        $(document).ready(function(){
+
+          if ("{{data}}" == "Bosan"){
+            let timerInterval
+            // create function to disable all keyboad input and mouse click
+            function disableInput() {
+                $(document).keydown(function(e) {
+                    e.preventDefault();
+                });
+                $(document).mousedown(function(e) {
+                    e.preventDefault();
+                });
+            }
+            disableInput();
+            Swal.fire({
+                title: 'Hidupku kok bosan banget!',
+                html: 'Hasil Prediksi: Sepertinya anda sedang <b>Bosan</b> 😑 <br> <br> Jangan Khawatir... Kami sedang mengarahkan anda ke halaman rekomendasi buku yang bisa membantu anda menghilangkan rasa bosan anda. <br> <br> <b>Terima Kasih</b> 😊',
+                imageUrl: '{{url_for("static", filename="hasil/after.jpg")}}',
+                imageWidth: 500,
+                imageHeight: 300,
+                imageAlt: 'Custom image',
+                timer: 7000,
+                timerProgressBar: true,
+                allowOutsideClick: false,
+                didOpen: () => {
+                  Swal.showLoading()
+                  timerInterval = setInterval(() => {
+                    const content = Swal.getContent()
+                    if (content) {
+                      const b = content.querySelector('b')
+                      if (b) {
+                        b.textContent = Swal.getTimerLeft()
+                      }
+                    }
+                  }, 100)
+                },
+                willClose: () => {
+                  clearInterval(timerInterval)
+                }
+                }).then((result) => {
+                function NewTab() { 
+                    window.open('bosan', '_blank');
+                }
+                function closeCurrentTab() {
+                    window.close();
+                }
+                if (result.dismiss === Swal.DismissReason.timer) {
+                  console.log('I was closed by the timer')
+                  NewTab();
+                  closeCurrentTab();
+                }
+              })
+        }
+            else if ("{{data}}" == "Marah"){
+                let timerInterval
+                // create function to disable all keyboad input and mouse click
+                function disableInput() {
+                    $(document).keydown(function(e) {
+                        e.preventDefault();
+                    });
+                    $(document).mousedown(function(e) {
+                        e.preventDefault();
+                    });
+                }
+                disableInput();
+                Swal.fire({
+                    title: 'Hmmm... Sabar ya...',
+                    html: 'Hasil Prediksi: Sepertinya anda sedang <b>Marah</b> 😡 <br> <br> Jangan Khawatir... Kami sedang mengarahkan anda ke halaman rekomendasi buku yang bisa membantu anda menghilangkan rasa marah anda. <br> <br> <b>Terima Kasih</b> 😊',
+                    imageUrl: '{{url_for("static", filename="hasil/after.jpg")}}',
+                    imageWidth: 500,
+                    imageHeight: 300,
+                    imageAlt: 'Custom image',
+                    timer: 7000,
+                    timerProgressBar: true,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                      Swal.showLoading()
+                      timerInterval = setInterval(() => {
+                        const content = Swal.getContent()
+                        if (content) {
+                          const b = content.querySelector('b')
+                          if (b) {
+                            b.textContent = Swal.getTimerLeft()
+                          }
+                        }
+                      }, 100)
+                    },
+                    willClose: () => {
+                      clearInterval(timerInterval)
+                    }
+                    }).then((result) => {
+                    function NewTab() { 
+                        window.open('marah', '_blank');
+                    }
+                    function closeCurrentTab() {
+                        window.close();
+                    }
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                      console.log('I was closed by the timer')
+                      NewTab();
+                      closeCurrentTab();
+                    }
+                  })
+            }
+            else if ("{{data}}" == "Senang"){
+              let timerInterval
+              // create function to disable all keyboad input and mouse click
+              function disableInput() {
+                  $(document).keydown(function(e) {
+                      e.preventDefault();
+                  });
+                  $(document).mousedown(function(e) {
+                      e.preventDefault();
+                  });
+              }
+              disableInput();
+              Swal.fire({
+                  title: 'Yay! Senang banget!',
+                  html: 'Hasil Prediksi: Sepertinya anda sedang <b>Senang</b> 😄 <br> <br> Mohon tunggu sebentar, Rekomendasi buku yang bagus untuk anda sedang kami sediakan. <br> <br> <b>Terima Kasih</b> 😊',
+                  imageUrl: '{{url_for("static", filename="hasil/after.jpg")}}',
+                  imageWidth: 500,
+                  imageHeight: 300,
+                  imageAlt: 'Custom image',
+                  timer: 7000,
+                  timerProgressBar: true,
+                  allowOutsideClick: false,
+                  didOpen: () => {
+                    Swal.showLoading()
+                    timerInterval = setInterval(() => {
+                      const content = Swal.getContent()
+                      if (content) {
+                        const b = content.querySelector('b')
+                        if (b) {
+                          b.textContent = Swal.getTimerLeft()
+                        }
+                      }
+                    }, 100)
+                  },
+                  willClose: () => {
+                    clearInterval(timerInterval)
+                  }
+                  }).then((result) => {
+                  function NewTab() { 
+                      window.open('senang', '_blank');
+                  }
+                  function closeCurrentTab() {
+                      window.close();
+                  }
+                  if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                    NewTab();
+                    closeCurrentTab();
+                  }
+                })
+          }
+          else if ("{{data}}" == "Sedih"){
+            let timerInterval
+            // create function to disable all keyboad input and mouse click
+            function disableInput() {
+                $(document).keydown(function(e) {
+                    e.preventDefault();
+                });
+                $(document).mousedown(function(e) {
+                    e.preventDefault();
+                });
+            }
+            disableInput();
+            Swal.fire({
+                title: 'Aduh... Sedih banget!',
+                html: 'Hasil Prediksi: Sepertinya anda sedang <b>Sedih</b> ☹️ <br> <br> Tidak usah bersedih lagi, kami sedang mengarahkan anda ke halaman rekomendasi buku yang bisa membantu anda menghilangkan rasa sedih anda. <br> <br> <b>Terima Kasih</b> 😊',
+                imageUrl: '{{url_for("static", filename="hasil/after.jpg")}}',
+                imageWidth: 500,
+                imageHeight: 300,
+                imageAlt: 'Custom image',
+                timer: 7000,
+                timerProgressBar: true,
+                allowOutsideClick: false,
+                didOpen: () => {
+                  Swal.showLoading()
+                  timerInterval = setInterval(() => {
+                    const content = Swal.getContent()
+                    if (content) {
+                      const b = content.querySelector('b')
+                      if (b) {
+                        b.textContent = Swal.getTimerLeft()
+                      }
+                    }
+                  }, 100)
+                },
+                willClose: () => {
+                  clearInterval(timerInterval)
+                }
+                }).then((result) => {
+                function NewTab() { 
+                    window.open('sedih', '_blank');
+                }
+                function closeCurrentTab() {
+                    window.close();
+                }
+                if (result.dismiss === Swal.DismissReason.timer) {
+                  console.log('I was closed by the timer')
+                  NewTab();
+                  closeCurrentTab();
+                }
+              })
+        }
+        else if ("{{data}}" == "Malas"){
+                    let timerInterval
+                    // create function to disable all keyboad input and mouse click
+                    function disableInput() {
+                        $(document).keydown(function(e) {
+                            e.preventDefault();
+                        });
+                        $(document).mousedown(function(e) {
+                            e.preventDefault();
+                        });
+                    }
+                    disableInput();
+                    Swal.fire({
+                        title: 'Hmmm... Malas kenapa malas ya?',
+                        html: 'Hasil Prediksi: Sepertinya anda sedang <b>Malas</b> 🥱 <br> <br> Tidak usah malas lagi, kami sedang mengarahkan anda ke halaman rekomendasi buku yang bisa membantu anda menghilangkan rasa malas anda. <br> <br> <b>Terima Kasih</b> 😊',
+                        imageUrl: '{{url_for("static", filename="hasil/after.jpg")}}',
+                        imageWidth: 500,
+                        imageHeight: 300,
+                        imageAlt: 'Custom image',
+                        timer: 7000,
+                        timerProgressBar: true,
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                          Swal.showLoading()
+                          timerInterval = setInterval(() => {
+                            const content = Swal.getContent()
+                            if (content) {
+                              const b = content.querySelector('b')
+                              if (b) {
+                                b.textContent = Swal.getTimerLeft()
+                              }
+                            }
+                          }, 100)
+                        },
+                        willClose: () => {
+                          clearInterval(timerInterval)
+                        }
+                        }).then((result) => {
+                        function NewTab() { 
+                            window.open('malas', '_blank');
+                        }
+                        function closeCurrentTab() {
+                            window.close();
+                        }
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                          console.log('I was closed by the timer')
+                          NewTab();
+                          closeCurrentTab();
+                        }
+                      })
+                }
+                else if ("{{data}}" == "Terkejut"){
+                  let timerInterval
+                  // create function to disable all keyboad input and mouse click
+                  function disableInput() {
+                      $(document).keydown(function(e) {
+                          e.preventDefault();
+                      });
+                      $(document).mousedown(function(e) {
+                          e.preventDefault();
+                      });
+                  }
+                  disableInput();
+                  Swal.fire({
+                      title: 'Wow... Ada apa hari ini?',
+                      html: 'Hasil Prediksi: Sepertinya anda sedang <b>Terkejut</b> 😲 <br> <br> Jangan Khawatir..., biar anda tidak tegang lagi kami akan siapkan buku yang bagus untuk anda baca. <br> <br> <b>Terima Kasih</b> 😊',
+                      imageUrl: '{{url_for("static", filename="hasil/after.jpg")}}',
+                      imageWidth: 500,
+                      imageHeight: 300,
+                      imageAlt: 'Custom image',
+                      timer: 7000,
+                      timerProgressBar: true,
+                      allowOutsideClick: false,
+                      didOpen: () => {
+                        Swal.showLoading()
+                        timerInterval = setInterval(() => {
+                          const content = Swal.getContent()
+                          if (content) {
+                            const b = content.querySelector('b')
+                            if (b) {
+                              b.textContent = Swal.getTimerLeft()
+                            }
+                          }
+                        }, 100)
+                      },
+                      willClose: () => {
+                        clearInterval(timerInterval)
+                      }
+                      }).then((result) => {
+                      function NewTab() { 
+                          window.open('terkejut', '_blank');
+                      }
+                      function closeCurrentTab() {
+                          window.close();
+                      }
+                      if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log('I was closed by the timer')
+                        NewTab();
+                        closeCurrentTab();
+                      }
+                    })
+              }
+        });
+    </script>
     
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </body>
 </html>

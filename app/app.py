@@ -363,9 +363,9 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 def index():
     return render_template('index.html')
 
-@app.route('/index1')
-def index1():
-    return render_template('index1.html')
+# @app.route('/index1')
+# def index1():
+#     return render_template('index1.html')
 
 @app.route('/marah')
 def marah():
@@ -383,6 +383,13 @@ def sedih():
 def terkejut():
     return render_template('terkejut.html')
 
+@app.route('/bosan')
+def bosan():
+    return render_template('bosan.html')
+
+@app.route('/malas')
+def malas():
+    return render_template('malas.html')
 
 @app.route('/after', methods=['GET', 'POST'])
 def after():
