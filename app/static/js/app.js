@@ -117,5 +117,5 @@ $("#resume-camera").click(function () {
 $("#exit-app").click(function () {
     removeCapture();
     $("#webcam-switch").prop("checked", false).change();
-    window.location.href = "/index1";
+    window.location.href = "/";
 });
