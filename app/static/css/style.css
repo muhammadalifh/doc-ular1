@@ -806,7 +806,7 @@ body {
 	padding: 30px 30px 30px 30px;
 	margin-bottom: 30px;
 	background: #FFFFFF;
-	min-height: 300px;
+	min-height: 300px; 
 	border-radius: 2px;
 	-webkit-transition: box-shadow .3s ease-in-out;
 	-moz-transition:box-shadow .3s ease-in-out;
@@ -1669,10 +1669,16 @@ body {
 .footer {
 	background: #FFFFFF;
 	padding: 50px 0 50px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .footer .ft-left .footer-img {
 	padding: 0 0 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .footer .ft-left p {
@@ -1682,6 +1688,9 @@ body {
 	line-height: 1.5;
 	letter-spacing: 0;
 	margin-top: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 
